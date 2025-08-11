@@ -1,0 +1,30 @@
+{% extends 'musica/base.html' %}
+{% block title %}Recomendaciones{% endblock %}
+{% block content %}
+<div class="container my-4">
+  <h1 class="mb-4">Recomendaciones</h1>
+  {% if recomendaciones %}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      {% for r in recomendaciones %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ r.titulo }}</h5>
+              <p class="card-text">{{ r.descripcion|truncatechars:150 }}</p>
+              <p class="mb-1"><small class="text-muted">Fecha: {{ r.fecha|date:"d/m/Y" }}</small></p>
+              <p class="mb-2"><small class="text-muted">Artista: 
+                <a href="{% url 'musica:artista_detalle' r.artista.pk %}">
+                  {{ r.artista.nombre }}
+                </a>
+              </small></p>
+              <a href="{% url 'musica:recomendacion_detalle' r.pk %}" class="btn btn-primary btn-sm">Ver detalle</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No hay recomendaciones aún.</p>
+  {% endif %}
+</div>
+{% endblock %}

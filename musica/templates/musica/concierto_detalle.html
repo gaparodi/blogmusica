@@ -1,0 +1,29 @@
+{% extends 'musica/base.html' %}
+{% block title %}{{ concierto.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h1 class="h3 mb-3">{{ concierto.nombre }}</h1>
+
+  {% if concierto.imagen %}
+    <img src="{{ concierto.imagen.url }}" alt="{{ concierto.nombre }}" class="img-fluid mb-3">
+  {% endif %}
+
+  <ul class="list-unstyled text-muted small">
+    <li><strong>Fecha:</strong> {{ concierto.fecha|date:"d/m/Y H:i" }}</li>
+    <li><strong>Ubicación:</strong> {{ concierto.ubicacion }}</li>
+    <li><strong>Artistas:</strong>
+      {% for art in concierto.artistas.all %}
+        <a class="link-light" href="{% url 'musica:artista_detalle' art.pk %}">{{ art.nombre }}</a>{% if not forloop.last %}, {% endif %}
+      {% empty %} —
+      {% endfor %}
+    </li>
+  </ul>
+
+  <div class="mb-4">
+    {{ concierto.detalle|linebreaks }}
+  </div>
+
+  <a href="{% url 'musica:lista_conciertos' %}" class="btn btn-secondary">← Volver a conciertos</a>
+</div>
+{% endblock %}

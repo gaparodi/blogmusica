@@ -1,0 +1,80 @@
+{% extends 'musica/base.html' %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for item in items %}
+      <div class="col">
+        <div class="card h-100 bg-secondary text-light border-0">
+
+          {# Imagen según tipo #}
+          {% if item.tipo == 'nota' and item.obj.imagen_destacada %}
+            <a href="{% url 'musica:nota_detalle' item.obj.pk %}">
+              <img src="{{ item.obj.imagen_destacada.url }}" class="card-img-top" alt="{{ item.obj.titulo }}">
+            </a>
+
+          {% elif item.tipo == 'concierto' and item.obj.imagen %}
+            <a href="{% url 'musica:concierto_detalle' item.obj.pk %}">
+              <img src="{{ item.obj.imagen.url }}" class="card-img-top" alt="{{ item.obj.nombre }}">
+            </a>
+
+          {% elif item.tipo == 'lanzamiento' %}
+            <a href="{% url 'musica:lanzamiento_detalle' item.obj.pk %}">
+              {% if item.obj.artista.imagen %}
+                <img src="{{ item.obj.artista.imagen.url }}" class="card-img-top" alt="{{ item.obj.titulo }}">
+              {% else %}
+                <div class="bg-dark card-img-top" style="height:180px;"></div>
+              {% endif %}
+            </a>
+
+          {% elif item.tipo == 'recomendacion' %}
+            <a href="{% url 'musica:recomendacion_detalle' item.obj.pk %}">
+              <div class="bg-dark card-img-top" style="height:180px;"></div>
+            </a>
+          {% endif %}
+
+          <div class="card-body">
+            <h5 class="card-title mb-2">
+              {% if item.tipo == 'nota' %}
+                <a class="link-light text-decoration-none" href="{% url 'musica:nota_detalle' item.obj.pk %}">{{ item.obj.titulo }}</a>
+              {% elif item.tipo == 'concierto' %}
+                <a class="link-light text-decoration-none" href="{% url 'musica:concierto_detalle' item.obj.pk %}">{{ item.obj.nombre }}</a>
+              {% elif item.tipo == 'lanzamiento' %}
+                <a class="link-light text-decoration-none" href="{% url 'musica:lanzamiento_detalle' item.obj.pk %}">{{ item.obj.titulo }}</a>
+              {% else %}
+                <a class="link-light text-decoration-none" href="{% url 'musica:recomendacion_detalle' item.obj.pk %}">{{ item.obj.titulo }}</a>
+              {% endif %}
+            </h5>
+
+            <p class="card-text">
+              {% if item.tipo == 'nota' %}
+                {{ item.obj.contenido|truncatechars:100 }}
+              {% elif item.tipo == 'concierto' %}
+                {{ item.obj.detalle|truncatechars:100 }}
+              {% elif item.tipo == 'lanzamiento' %}
+                {{ item.obj.descripcion|truncatechars:100 }}
+              {% else %}
+                {{ item.obj.descripcion|truncatechars:100 }}
+              {% endif %}
+            </p>
+
+            <a
+              href="{% if item.tipo == 'nota' %}{% url 'musica:nota_detalle' item.obj.pk %}
+                     {% elif item.tipo == 'concierto' %}{% url 'musica:concierto_detalle' item.obj.pk %}
+                     {% elif item.tipo == 'lanzamiento' %}{% url 'musica:lanzamiento_detalle' item.obj.pk %}
+                     {% else %}{% url 'musica:recomendacion_detalle' item.obj.pk %}{% endif %}"
+              class="btn btn-sm btn-primary">Ver más</a>
+          </div>
+
+          <div class="card-footer text-muted small">
+            {{ item.orden|date:"d/m/Y H:i" }}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No hay contenido para mostrar.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

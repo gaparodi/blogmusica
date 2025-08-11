@@ -1,0 +1,29 @@
+{% extends 'musica/base.html' %}
+{% block title %}Artistas{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h1 class="mb-4">Artistas</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for a in artistas %}
+      <div class="col">
+        <a href="{% url 'musica:artista_detalle' a.pk %}" class="text-decoration-none text-light">
+          <div class="card h-100 bg-secondary text-light border-0">
+            {% if a.imagen %}
+              <img src="{{ a.imagen.url }}" class="card-img-top" alt="{{ a.nombre }}">
+            {% else %}
+              <div class="bg-dark card-img-top" style="height:180px;"></div>
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ a.nombre }}</h5>
+              {% if a.genero_principal %}<p class="card-text text-muted small">{{ a.genero_principal }}</p>{% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% empty %}
+      <p>No hay artistas cargados.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

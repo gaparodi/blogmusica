@@ -1,0 +1,31 @@
+{% extends 'musica/base.html' %}
+{% block title %}{{ nota.titulo }}{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h1 class="h3 mb-2">{{ nota.titulo }}</h1>
+
+  <p class="text-muted">
+    <strong>Fecha:</strong> {{ nota.created_at|date:"d/m/Y H:i" }}
+  </p>
+
+  {% if nota.imagen_destacada %}
+    <img src="{{ nota.imagen_destacada.url }}" alt="{{ nota.titulo }}" class="img-fluid mb-3">
+  {% endif %}
+
+  <div class="mb-3">
+    {{ nota.contenido|linebreaks }}
+  </div>
+
+  {% if nota.video_youtube %}
+    <div class="ratio ratio-16x9 mb-3">
+      <iframe
+        src="{{ nota.video_youtube|cut:'watch?v='|add:'embed/' }}"
+        allowfullscreen
+      ></iframe>
+    </div>
+  {% endif %}
+
+  <a href="{% url 'musica:inicio' %}" class="btn btn-secondary mt-3">← Volver</a>
+</div>
+{% endblock %}

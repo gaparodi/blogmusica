@@ -1,0 +1,40 @@
+{% extends 'musica/base.html' %}
+{% block title %}{{ artista.nombre }}{% endblock %}
+{% block content %}
+
+<div class="container my-4">
+
+  <h1 class="mb-4">{{ artista.nombre }}</h1>
+
+  {% if artista.imagen %}
+    <div class="text-center mb-4">
+      <img src="{{ artista.imagen.url }}" alt="{{ artista.nombre }}" class="img-fluid rounded">
+    </div>
+  {% endif %}
+
+  {% if artista.biografia %}
+    <h2>Biografía</h2>
+    <p>{{ artista.biografia }}</p>
+  {% endif %}
+
+  {% if artista.sitio_web %}
+    <p>
+      <strong>Sitio web:</strong>
+      <a href="{{ artista.sitio_web }}" target="_blank">{{ artista.sitio_web }}</a>
+    </p>
+  {% endif %}
+
+  {% if embed_url %}
+    <div class="ratio ratio-16x9 mb-4">
+      <iframe src="{{ embed_url }}"
+              title="Video de {{ artista.nombre }}"
+              frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+  {% endif %}
+
+  <!-- Aquí podrías agregar más secciones, como conciertos, lanzamientos, etc. -->
+
+</div>
+
+{% endblock %}

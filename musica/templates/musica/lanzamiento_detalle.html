@@ -1,0 +1,17 @@
+{% extends 'musica/base.html' %}
+{% block title %}Detalle de Lanzamiento{% endblock %}
+{% block content %}
+<div class="container my-4">
+  <h1>{{ lanzamiento.titulo }}</h1>
+  <p class="text-muted mb-1"><strong>Fecha de lanzamiento:</strong> {{ lanzamiento.fecha_lanzamiento|date:"d/m/Y" }}</p>
+  <p class="text-muted mb-4"><strong>Artista:</strong>
+    <a href="{% url 'musica:artista_detalle' lanzamiento.artista.pk %}">
+      {{ lanzamiento.artista.nombre }}
+    </a>
+  </p>
+  <div class="mb-4">
+    {{ lanzamiento.descripcion|linebreaks }}
+  </div>
+  <a href="{% url 'lista_lanzamientos' %}" class="btn btn-secondary">← Volver a lanzamientos</a>
+</div>
+{% endblock %}

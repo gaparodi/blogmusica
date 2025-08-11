@@ -1,0 +1,17 @@
+{% extends 'musica/base.html' %}
+{% block title %}Detalle de Recomendación{% endblock %}
+{% block content %}
+<div class="container my-4">
+  <h1>{{ recomendacion.titulo }}</h1>
+  <p class="text-muted mb-1"><strong>Fecha:</strong> {{ recomendacion.fecha|date:"d/m/Y" }}</p>
+  <p class="text-muted mb-4"><strong>Artista:</strong>
+    <a href="{% url 'musica:artista_detalle' recomendacion.artista.pk %}">
+      {{ recomendacion.artista.nombre }}
+    </a>
+  </p>
+  <div class="mb-4">
+    {{ recomendacion.descripcion|linebreaks }}
+  </div>
+  <a href="{% url 'musica:lista_recomendaciones' %}" class="btn btn-secondary">← Volver a recomendaciones</a>
+</div>
+{% endblock %}

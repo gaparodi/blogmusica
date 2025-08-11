@@ -1,0 +1,34 @@
+{% extends 'musica/base.html' %}
+{% block title %}Conciertos{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h1 class="mb-4">Conciertos</h1>
+  <div class="list-group">
+    {% for concierto in conciertos %}
+      <a href="{% url 'musica:concierto_detalle' concierto.pk %}" 
+         class="list-group-item list-group-item-action py-3 d-flex align-items-start">
+        {% if concierto.imagen %}
+          <img src="{{ concierto.imagen.url }}" 
+               alt="{{ concierto.nombre }}" 
+               class="img-thumbnail me-3 flex-shrink-0" 
+               style="width:120px; height:auto;">
+        {% else %}
+          <div class="bg-secondary me-3" style="width:120px; height:80px;"></div>
+        {% endif %}
+        <div class="flex-grow-1">
+          <h5 class="mb-1">{{ concierto.nombre }}</h5>
+          <small class="text-muted">
+            {{ concierto.fecha|date:"d/m/Y" }} — {{ concierto.ubicacion }}, {{ concierto.ciudad }} ({{ concierto.pais }})
+          </small>
+          <p class="mb-1 mt-2 text-truncate">
+            {{ concierto.detalle|truncatechars:100 }}
+          </p>
+        </div>
+      </a>
+    {% empty %}
+      <p>No hay conciertos programados.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

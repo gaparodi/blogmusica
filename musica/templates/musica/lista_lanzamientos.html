@@ -1,0 +1,39 @@
+{% extends 'musica/base.html' %}
+{% block title %}Lanzamientos{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h1 class="mb-4">Lanzamientos</h1>
+  <div class="list-group">
+    {% for lanzamiento in lanzamientos %}
+      <a href="{% url 'musica:lanzamiento_detalle' lanzamiento.pk %}"
+         class="list-group-item list-group-item-action py-3 d-flex align-items-start">
+        {# Miniatura (usamos la imagen del artista si existe) #}
+        {% if lanzamiento.artista.imagen %}
+          <img src="{{ lanzamiento.artista.imagen.url }}"
+               alt="{{ lanzamiento.artista.nombre }}"
+               class="img-thumbnail me-3 flex-shrink-0"
+               style="width:120px; height:auto;">
+        {% else %}
+          <div class="bg-secondary me-3" style="width:120px; height:80px;"></div>
+        {% endif %}
+
+        <div class="flex-grow-1">
+          <h5 class="mb-1">
+            {{ lanzamiento.titulo }}  
+            <small class="text-muted">— {{ lanzamiento.artista.nombre }}</small>
+          </h5>
+          <small class="text-muted">
+            {{ lanzamiento.fecha_lanzamiento|date:"d/m/Y" }}
+          </small>
+          <p class="mb-1 mt-2 text-truncate">
+            {{ lanzamiento.descripcion|default:"Sin descripción."|truncatechars:100 }}
+          </p>
+        </div>
+      </a>
+    {% empty %}
+      <p>No hay lanzamientos registrados.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

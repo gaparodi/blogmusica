@@ -21,6 +21,10 @@ DEBUG = os.environ.get("DJ_DEBUG", "True") == "True"
 _allowed_env = os.environ.get("DJ_ALLOWED_HOST", "")
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"] + ([_allowed_env] if _allowed_env else [])
 # Si prefieres hardcodear, añade por ejemplo: "TU_USUARIO.pythonanywhere.com"
+# CSRF en producción (debe incluir https://)
+CSRF_TRUSTED_ORIGINS = [
+    "https://gaparodi.pythonanywhere.com",
+]
 
 # Apps
 INSTALLED_APPS = [

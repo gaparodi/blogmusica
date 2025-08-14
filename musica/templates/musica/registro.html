@@ -4,14 +4,30 @@
 {% block content %}
 <div class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
   <div class="col-md-4">
-    <h2 class="mb-4 text-center">Crea tu cuenta</h2>
-    <form method="post" class="p-4 border rounded shadow bg-white">
+    <h2 class="mb-4 text-center" style="color:#6C4F1F;">Crea tu cuenta</h2>
+    <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-primary w-100">Registrarse</button>
-    </form>
-    <p class="mt-3 text-center">
-      ¿Ya tienes cuenta? <a href="{% url 'musica:login' %}">Inicia sesión aquí</a>
+      <form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    {{ form.username.label_tag }}
+    {{ form.username }}
+  </div>
+  <div class="mb-3">
+    {{ form.password1.label_tag }}
+    {{ form.password1 }}
+  </div>
+  <div class="mb-3">
+    {{ form.password2.label_tag }}
+    {{ form.password2 }}
+  </div>
+  <button type="submit" class="btn w-100" style="background-color: #FFC107; color: #fff; border: none;">
+    Registrarse
+  </button>
+</form>
+
+    <p class="mt-3 text-center" style="color:#333;">
+      ¿Ya tienes cuenta? <a href="{% url 'musica:login' %}" style="color:#FFC107;">Inicia sesión aquí</a>
     </p>
   </div>
 </div>

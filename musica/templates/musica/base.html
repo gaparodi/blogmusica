@@ -15,49 +15,49 @@
   <style>
     /* General */
     body {
-      background-color: #FAFAF5;
+      background-color: #FFF8E1; /* Fondo blanco cálido */
       color: #333;
       font-family: 'Poppins', sans-serif;
     }
 
     /* Navbar */
     .navbar-custom {
-      background-color: #333;
+      background-color: #6C4F1F; /* Marrón oscuro */
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .navbar-custom .navbar-brand {
-      color: #FF6B6B;
+      color: #FFC107; /* Amarillo dorado */
       font-weight: 700;
       transition: color 0.3s;
     }
 
     .navbar-custom .navbar-brand:hover {
-      color: #ff4b4b;
+      color: #FF9800; /* Naranja suave */
     }
 
     .navbar-custom .btn-outline-primary {
-      border: 1px solid #FF6B6B;
-      color: #FF6B6B;
+      border: 1px solid #FFC107;
+      color: #FFC107;
       transition: all 0.3s ease;
     }
 
     .navbar-custom .btn-outline-primary:hover {
-      background: #FF6B6B;
+      background: #FFC107;
       color: #fff;
       transform: scale(1.05);
     }
 
     .navbar-custom .btn-primary {
-      background: #FF6B6B;
-      border-color: #FF6B6B;
+      background: #FFC107;
+      border-color: #FFC107;
       color: #fff;
       transition: all 0.3s ease;
     }
 
     .navbar-custom .btn-primary:hover {
-      background: #ff4b4b;
-      border-color: #ff4b4b;
+      background: #FF9800;
+      border-color: #FF9800;
       transform: scale(1.05);
     }
 
@@ -68,19 +68,19 @@
     }
 
     .navbar-custom .nav-link:hover {
-      color: #FF6B6B;
+      color: #FFC107;
     }
 
     /* Footer */
     footer {
-      background-color: #333;
+      background-color: #6C4F1F;
       color: #fff;
       padding: 1rem 0;
       text-align: center;
     }
 
     footer a {
-      color: #FF6B6B;
+      color: #FFC107;
       text-decoration: none;
       transition: 0.2s;
     }
@@ -107,7 +107,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.4); /* Sombra para que resalte la imagen amarilla */
     }
 
     .hero-text {
@@ -122,7 +122,13 @@
       align-items: center;
     }
 
-    .hero-text h1, .hero-text p {
+    .hero-text h1 {
+      color: #FFC107;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .hero-text p {
+      color: #FFF8E1;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
 
@@ -169,7 +175,17 @@
     </nav>
   </header>
 
-  
+  <!-- Banner / Hero solo en inicio -->
+  {% if request.resolver_match.url_name == 'inicio' %}
+  <div class="hero-image">
+    <img src="{% static 'musica/portada.png' %}" alt="Portada música">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Tu música, en todas partes</h1>
+      <p>Descubre artistas, conciertos y lanzamientos</p>
+    </div>
+  </div>
+  {% endif %}
 
   <!-- Toasts -->
   <div id="toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>

@@ -6,29 +6,27 @@
 {% block content %}
 
 <!-- Buscador -->
-<div class="container mb-4">
+<div class="container mb-4 mt-5"> <!-- Agregado mt-5 para separar del hero -->
   <form method="GET" action="{% url 'musica:inicio' %}" class="d-flex justify-content-center">
     <input 
       type="text" 
       name="q" 
       class="form-control me-2 w-50" 
       placeholder="Buscar artistas, notas, conciertos..." 
-      value="{{ query|default:'' }}">
-    <button type="submit" class="btn btn-primary">Buscar</button>
+      value="{{ query|default:'' }}"
+      style="border-radius: 5px; border: 1px solid #6C4F1F; padding: 8px;">
+    <button type="submit" class="btn" style="background-color: #FFC107; color: #fff; border: none; transition: 0.3s;">
+      Buscar
+    </button>
   </form>
 </div>
 
-<!-- Hero -->
-<div class="container-fluid p-0 mb-4">
-  <div class="hero-image position-relative text-center">
-    <img src="{% static 'musica/portada.png' %}" alt="Portada" class="img-fluid w-100" style="max-height:500px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/1200x500';">
-    <div class="hero-text position-absolute top-50 start-50 translate-middle text-white">
-      <h1>Bienvenidos al blog donde la música nunca se detiene</h1>
-      <p class="lead">Explorá géneros, descubrí artistas y compartí tu pasión con otros fanáticos.</p>
-      <a href="{% url 'musica:lista_artistas' %}" class="btn btn-primary btn-lg mt-3">Ver Artistas</a>
-    </div>
-  </div>
-</div>
+<script>
+  // Hover para el botón de búsqueda
+  const buscarBtn = document.querySelector('form button');
+  buscarBtn.addEventListener('mouseover', () => buscarBtn.style.backgroundColor = '#FF9800');
+  buscarBtn.addEventListener('mouseout', () => buscarBtn.style.backgroundColor = '#FFC107');
+</script>
 
 <!-- Contenido principal -->
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">

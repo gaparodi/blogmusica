@@ -9,9 +9,19 @@
       {{ lanzamiento.artista.nombre }}
     </a>
   </p>
+
+  {# 👇 AÑADE ESTO #}
+  {% if lanzamiento.imagen %}
+    <img src="{{ lanzamiento.imagen.url }}" alt="{{ lanzamiento.titulo }}" class="img-fluid mb-3">
+  {% elif lanzamiento.portada %}
+    <img src="{{ lanzamiento.portada.url }}" alt="{{ lanzamiento.titulo }}" class="img-fluid mb-3">
+  {% elif lanzamiento.caratula %}
+    <img src="{{ lanzamiento.caratula.url }}" alt="{{ lanzamiento.titulo }}" class="img-fluid mb-3">
+  {% endif %}
+
   <div class="mb-4">
     {{ lanzamiento.descripcion|linebreaks }}
   </div>
-  <a href="{% url 'lista_lanzamientos' %}" class="btn btn-secondary">← Volver a lanzamientos</a>
+  <a href="{% url 'musica:lista_lanzamientos' %}" class="btn btn-secondary">← Volver a lanzamientos</a>
 </div>
 {% endblock %}

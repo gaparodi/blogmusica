@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Artista(models.Model):
@@ -58,3 +59,13 @@ class Recomendacion(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+
+class Comentario(models.Model):
+    nota = models.ForeignKey('NotaBlog', on_delete=models.CASCADE, related_name='comentarios')
+    autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    contenido = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.autor.username} - {self.nota.titulo[:20]}"

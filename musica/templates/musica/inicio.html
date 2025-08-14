@@ -1,70 +1,93 @@
 {% extends 'musica/base.html' %}
+{% load static %}
+
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<div class="container my-4">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+<!-- Buscador -->
+<div class="container mb-4">
+  <form method="GET" action="{% url 'musica:inicio' %}" class="d-flex justify-content-center">
+    <input 
+      type="text" 
+      name="q" 
+      class="form-control me-2 w-50" 
+      placeholder="Buscar artistas, notas, conciertos..." 
+      value="{{ query|default:'' }}">
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+</div>
+
+<!-- Hero -->
+<div class="container-fluid p-0 mb-4">
+  <div class="hero-image position-relative text-center">
+    <img src="{% static 'musica/portada.png' %}" alt="Portada" class="img-fluid w-100" style="max-height:500px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/1200x500';">
+    <div class="hero-text position-absolute top-50 start-50 translate-middle text-white">
+      <h1>Bienvenidos al blog donde la música nunca se detiene</h1>
+      <p class="lead">Explorá géneros, descubrí artistas y compartí tu pasión con otros fanáticos.</p>
+      <a href="{% url 'musica:lista_artistas' %}" class="btn btn-primary btn-lg mt-3">Ver Artistas</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+  {% if items %}
     {% for item in items %}
+      {% with obj=item.obj %}
       <div class="col">
         <div class="card h-100 bg-secondary text-light border-0">
 
-          {# Imagen según tipo #}
-          {% if item.tipo == 'nota' and item.obj.imagen_destacada %}
-            <a href="{% url 'musica:nota_detalle' item.obj.pk %}">
-              <img src="{{ item.obj.imagen_destacada.url }}" class="card-img-top" alt="{{ item.obj.titulo }}">
-            </a>
-
-          {% elif item.tipo == 'concierto' and item.obj.imagen %}
-            <a href="{% url 'musica:concierto_detalle' item.obj.pk %}">
-              <img src="{{ item.obj.imagen.url }}" class="card-img-top" alt="{{ item.obj.nombre }}">
-            </a>
-
-          {% elif item.tipo == 'lanzamiento' %}
-            <a href="{% url 'musica:lanzamiento_detalle' item.obj.pk %}">
-              {% if item.obj.artista.imagen %}
-                <img src="{{ item.obj.artista.imagen.url }}" class="card-img-top" alt="{{ item.obj.titulo }}">
-              {% else %}
+          <!-- Imagen -->
+          {% with img_url=None %}
+            {% if item.tipo == 'nota' and obj.imagen_destacada %}
+              {% with obj.imagen_destacada.url as img_url %}{% endwith %}
+            {% elif item.tipo == 'concierto' and obj.imagen %}
+              {% with obj.imagen.url as img_url %}{% endwith %}
+            {% elif item.tipo == 'lanzamiento' and obj.artista.imagen %}
+              {% with obj.artista.imagen.url as img_url %}{% endwith %}
+            {% endif %}
+            {% if img_url %}
+              <a href="{% if item.tipo == 'nota' %}{% url 'musica:nota_detalle' obj.pk %}
+                         {% elif item.tipo == 'concierto' %}{% url 'musica:concierto_detalle' obj.pk %}
+                         {% elif item.tipo == 'lanzamiento' %}{% url 'musica:lanzamiento_detalle' obj.pk %}
+                         {% else %}{% url 'musica:recomendacion_detalle' obj.pk %}{% endif %}">
+                <img src="{{ img_url }}" class="card-img-top" alt="{{ obj.titulo|default:obj.nombre }}">
+              </a>
+            {% else %}
+              <a href="{% if item.tipo == 'nota' %}{% url 'musica:nota_detalle' obj.pk %}
+                         {% elif item.tipo == 'concierto' %}{% url 'musica:concierto_detalle' obj.pk %}
+                         {% elif item.tipo == 'lanzamiento' %}{% url 'musica:lanzamiento_detalle' obj.pk %}
+                         {% else %}{% url 'musica:recomendacion_detalle' obj.pk %}{% endif %}">
                 <div class="bg-dark card-img-top" style="height:180px;"></div>
-              {% endif %}
-            </a>
+              </a>
+            {% endif %}
+          {% endwith %}
 
-          {% elif item.tipo == 'recomendacion' %}
-            <a href="{% url 'musica:recomendacion_detalle' item.obj.pk %}">
-              <div class="bg-dark card-img-top" style="height:180px;"></div>
-            </a>
-          {% endif %}
-
+          <!-- Cuerpo -->
           <div class="card-body">
             <h5 class="card-title mb-2">
-              {% if item.tipo == 'nota' %}
-                <a class="link-light text-decoration-none" href="{% url 'musica:nota_detalle' item.obj.pk %}">{{ item.obj.titulo }}</a>
-              {% elif item.tipo == 'concierto' %}
-                <a class="link-light text-decoration-none" href="{% url 'musica:concierto_detalle' item.obj.pk %}">{{ item.obj.nombre }}</a>
-              {% elif item.tipo == 'lanzamiento' %}
-                <a class="link-light text-decoration-none" href="{% url 'musica:lanzamiento_detalle' item.obj.pk %}">{{ item.obj.titulo }}</a>
-              {% else %}
-                <a class="link-light text-decoration-none" href="{% url 'musica:recomendacion_detalle' item.obj.pk %}">{{ item.obj.titulo }}</a>
-              {% endif %}
+              <a class="link-light text-decoration-none" href="{% if item.tipo == 'nota' %}{% url 'musica:nota_detalle' obj.pk %}
+                                                   {% elif item.tipo == 'concierto' %}{% url 'musica:concierto_detalle' obj.pk %}
+                                                   {% elif item.tipo == 'lanzamiento' %}{% url 'musica:lanzamiento_detalle' obj.pk %}
+                                                   {% else %}{% url 'musica:recomendacion_detalle' obj.pk %}{% endif %}">
+                {{ obj.titulo|default:obj.nombre }}
+              </a>
             </h5>
-
             <p class="card-text">
               {% if item.tipo == 'nota' %}
-                {{ item.obj.contenido|truncatechars:100 }}
+                {{ obj.contenido|truncatechars:100 }}
               {% elif item.tipo == 'concierto' %}
-                {{ item.obj.detalle|truncatechars:100 }}
-              {% elif item.tipo == 'lanzamiento' %}
-                {{ item.obj.descripcion|truncatechars:100 }}
+                {{ obj.detalle|truncatechars:100 }}
               {% else %}
-                {{ item.obj.descripcion|truncatechars:100 }}
+                {{ obj.descripcion|truncatechars:100 }}
               {% endif %}
             </p>
-
-            <a
-              href="{% if item.tipo == 'nota' %}{% url 'musica:nota_detalle' item.obj.pk %}
-                     {% elif item.tipo == 'concierto' %}{% url 'musica:concierto_detalle' item.obj.pk %}
-                     {% elif item.tipo == 'lanzamiento' %}{% url 'musica:lanzamiento_detalle' item.obj.pk %}
-                     {% else %}{% url 'musica:recomendacion_detalle' item.obj.pk %}{% endif %}"
-              class="btn btn-sm btn-primary">Ver más</a>
+            <a href="{% if item.tipo == 'nota' %}{% url 'musica:nota_detalle' obj.pk %}
+                     {% elif item.tipo == 'concierto' %}{% url 'musica:concierto_detalle' obj.pk %}
+                     {% elif item.tipo == 'lanzamiento' %}{% url 'musica:lanzamiento_detalle' obj.pk %}
+                     {% else %}{% url 'musica:recomendacion_detalle' obj.pk %}{% endif %}"
+               class="btn btn-sm btn-primary">Ver más</a>
           </div>
 
           <div class="card-footer text-muted small">
@@ -72,9 +95,17 @@
           </div>
         </div>
       </div>
-    {% empty %}
-      <p>No hay contenido para mostrar.</p>
+      {% endwith %}
     {% endfor %}
-  </div>
+  {% else %}
+    <div class="col-12">
+      {% if query %}
+        <p>No se encontraron resultados para "{{ query }}".</p>
+      {% else %}
+        <p>No hay contenido para mostrar.</p>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
+
 {% endblock %}

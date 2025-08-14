@@ -2,67 +2,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Blog Música{% endblock %}</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'musica/style.css' %}">
+
+  <style>
+    /* General */
+    body {
+      background-color: #FAFAF5;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background-color: #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .navbar-custom .navbar-brand {
+      color: #FF6B6B;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+
+    .navbar-custom .navbar-brand:hover {
+      color: #ff4b4b;
+    }
+
+    .navbar-custom .btn-outline-primary {
+      border: 1px solid #FF6B6B;
+      color: #FF6B6B;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom .btn-outline-primary:hover {
+      background: #FF6B6B;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .navbar-custom .btn-primary {
+      background: #FF6B6B;
+      border-color: #FF6B6B;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom .btn-primary:hover {
+      background: #ff4b4b;
+      border-color: #ff4b4b;
+      transform: scale(1.05);
+    }
+
+    .navbar-custom .nav-link {
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .navbar-custom .nav-link:hover {
+      color: #FF6B6B;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #FF6B6B;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero/banner */
+    .hero-image {
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-text h1, .hero-text p {
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 2rem; }
+      .hero-text p { font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 1.5rem; }
+      .hero-text p { font-size: 0.9rem; }
+    }
+  </style>
 </head>
 
-<body class="bg-dark text-light">
+<body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <div class="container">
-      <!-- Marca a la izquierda -->
-      <a class="navbar-brand" href="{% url 'musica:inicio' %}">Blog Música</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Botones centrados -->
-      <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-        <div class="btn-group" role="group" aria-label="Menú principal">
-          <a
-            href="{% url 'musica:inicio' %}"
-            class="btn {% if request.resolver_match.url_name == 'inicio' %}btn-primary{% else %}btn-outline-light{% endif %} mx-1"
-          >Inicio</a>
-
-          <a
-            href="{% url 'musica:lista_artistas' %}"
-            class="btn {% if request.resolver_match.url_name == 'lista_artistas' %}btn-primary{% else %}btn-outline-light{% endif %} mx-1"
-          >Artistas</a>
-
-          <a
-            href="{% url 'musica:lista_conciertos' %}"
-            class="btn {% if request.resolver_match.url_name == 'lista_conciertos' %}btn-primary{% else %}btn-outline-light{% endif %} mx-1"
-          >Conciertos</a>
-
-          <a
-            href="{% url 'musica:lista_lanzamientos' %}"
-            class="btn {% if request.resolver_match.url_name == 'lista_lanzamientos' %}btn-primary{% else %}btn-outline-light{% endif %} mx-1"
-          >Lanzamientos</a>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'musica:inicio' %}">Musica en Todas Partes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <div class="btn-group mx-auto" role="group">
+            <a href="{% url 'musica:inicio' %}" class="btn {% if request.resolver_match.url_name == 'inicio' %}btn-primary{% else %}btn-outline-primary{% endif %} mx-1">Inicio</a>
+            <a href="{% url 'musica:lista_artistas' %}" class="btn {% if request.resolver_match.url_name == 'lista_artistas' %}btn-primary{% else %}btn-outline-primary{% endif %} mx-1">Artistas</a>
+            <a href="{% url 'musica:lista_conciertos' %}" class="btn {% if request.resolver_match.url_name == 'lista_conciertos' %}btn-primary{% else %}btn-outline-primary{% endif %} mx-1">Conciertos</a>
+            <a href="{% url 'musica:lista_lanzamientos' %}" class="btn {% if request.resolver_match.url_name == 'lista_lanzamientos' %}btn-primary{% else %}btn-outline-primary{% endif %} mx-1">Lanzamientos</a>
+            <a href="{% url 'musica:quienes_somos' %}" class="btn {% if request.resolver_match.url_name == 'quienes_somos' %}btn-primary{% else %}btn-outline-primary{% endif %} mx-1">Quiénes Somos</a>
+          </div>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" href="#">{{ user.username }}</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" onclick="confirmarLogout()">Cerrar sesión</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'musica:login' %}">Iniciar sesión</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'musica:registro' %}">Registrarse</a></li>
+            {% endif %}
+          </ul>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div class="container">
+  
+
+  <!-- Toasts -->
+  <div id="toast-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>
+
+  <main class="container p-0">
     {% block content %}{% endblock %}
-  </div>
+  </main>
 
-  <footer class="bg-black text-secondary mt-5 py-4">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-      <div>
-        <small>&copy; {% now "Y" %} Blog de Música. Creado por Grupo 5 Comisión 6.</small>
-      </div>
-      <div>
-        <small>Créditos: Bootstrap, Django.</small>
-      </div>
-    </div>
+  <footer>
+    <p>© {% now "Y" %} Blog de Música. Creado por Grupo 5 Comisión 6 · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    <p class="mt-2"><a href="#">Arriba</a></p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    function confirmarLogout() {
+        if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+            window.location.href = "{% url 'musica:logout' %}";
+        }
+    }
+
+    function mostrarToast(mensaje, tipo) {
+        const toastContainer = document.getElementById('toast-container');
+        const toastId = 'toast-' + Date.now();
+        const toastHtml = `
+            <div id="${toastId}" class="toast align-items-center text-white bg-${tipo} border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">${mensaje}</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>`;
+        toastContainer.insertAdjacentHTML('beforeend', toastHtml);
+        const toastElement = document.getElementById(toastId);
+        const toast = new bootstrap.Toast(toastElement, { autohide: true, delay: 4000 });
+        toast.show();
+        toastElement.addEventListener('hidden.bs.toast', () => toastElement.remove());
+    }
+  </script>
+
+  {% if messages %}
+    <script>
+      {% for message in messages %}
+        mostrarToast('{{ message }}', '{{ message.tags }}');
+      {% endfor %}
+    </script>
+  {% endif %}
 </body>
 </html>

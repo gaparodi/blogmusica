@@ -1,0 +1,242 @@
+﻿[
+{
+  "model": "musica.artista",
+  "pk": 1,
+  "fields": {
+    "nombre": "Luck Ra",
+    "pais": "Argentina",
+    "genero_principal": "Cuarteto",
+    "biografia": "Juan Facundo Almenara Ord├│├▒ez (C├│rdoba, Argentina; 20 de febrero de 1999), conocido art├¡sticamente como Luck Ra, es un cantante y streamer argentino. Empez├│ su carrera musical en 2017, subiendo canciones que a d├¡a de hoy est├ín borradas de todas las redes donde fueron subidas, empez├│ a hacerse reconocido en la escena argentina del trap con su sencillo ┬½No quiero m├ís┬╗, publicado en YouTube el 23 de mayo de 2018, tema que luego hizo remix con Seven Kayne.\r\n\r\nSu canci├│n m├ís reproducida fue durante mucho tiempo ┬½Te mentir├¡a┬╗, subida a YouTube y Spotify el 19 de febrero de 2021, un sencillo que marcaria el tiempo muerto de su carrera donde no pudo publicar canciones por un problema que tuvo con su disquera Panter Music. ÔÇïSin perjuicio de ese traspi├®, actualmente su canci├│n m├ís reproducida es ┬½La morocha┬╗, que se logr├│ con la colaboraci├│n del cantante BM; canci├│n que estar├¡a en la cima del ranking de Billboard Argentina durante varias semanasÔÇï. En 2025 se desempe├▒o como jurado en el reality show \"La Voz Argentina\" junto a Lali Esp├│sito, Miranda y Soledad Pastorutti.",
+    "sitio_web": "",
+    "imagen": "artistas/luck_ra_fx6FVA6.jpg",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:18:22.749Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 2,
+  "fields": {
+    "nombre": "Los ├üngeles Azules",
+    "pais": "M├®xico",
+    "genero_principal": "Cumbia",
+    "biografia": "Los ├üngeles Azules es un grupo musical mexicano del g├®nero de cumbia, originario de la Ciudad de M├®xico.[1]ÔÇï Se fund├│ inicialmente por cuatro de ocho hermanos conocidos como la Familia Mej├¡a Avante, en el a├▒o 1976, y est├í activo oficialmente desde el a├▒o 1980.\r\n\r\nHasta la fecha, como agrupaci├│n han lanzado veintid├│s ├ílbumes de estudio, cuatro discos en vivo y siete ├ílbumes recopilatorios. Han vendido entre 30 y 40 millones de copias alrededor de todo el mundo. Dentro de sus colaboraciones se encuentran participaciones con: Pepe Aguilar,[2]ÔÇï Carla Morrison,[3]ÔÇï Lila Downs,[3]ÔÇï Natalia Lafourcade,[4]ÔÇï Ha*Ash,[5]ÔÇï Gloria Trevi,[6]ÔÇï Miguel Bos├®,[7]ÔÇï Yuri,[7]ÔÇï Julieta Venegas,[8]ÔÇï Abel Pintos,[9]ÔÇï Emilia,[10]ÔÇï entre muchos otros.\r\n\r\nAsimismo, hicieron un tema llamado ┬½La Vecina┬╗ para la telenovela hom├│nima publicada en 2016.",
+    "sitio_web": "",
+    "imagen": "artistas/los_angeles_azules_fvKfmUV.jpg",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:20:32.802Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 3,
+  "fields": {
+    "nombre": "Taylor Swift",
+    "pais": "USA",
+    "genero_principal": "Pop",
+    "biografia": "Taylor Alison Swift (West Reading, Pensilvania; 13 de diciembre de 1989) es una cantautora estadounidense. Conocida por sus composiciones autobiogr├íficas, su versatilidad art├¡stica y su impacto cultural, Swift es una de las artistas con mayores ventas del mundo, la int├®rprete con mayores ingresos, la artista musical m├ís rica y la primera multimillonaria cuya principal fuente de ingresos es la m├║sica.\r\n\r\nSwift firm├│ con Big Machine Records en 2005, debutando como cantante country con los ├ílbumes Taylor Swift (2006) y Fearless (2008). Los sencillos ┬½Teardrops on My Guitar┬╗, ┬½Love Story┬╗ y ┬½You Belong with Me┬╗ alcanzaron un gran ├®xito en radios country y pop. Incorpor├│ el rock en Speak Now (2010) y la electr├│nica en Red (2012), recalibrando posteriormente su imagen del country al pop con el ├ílbum de synth pop 1989 (2014); el consiguiente seguimiento medi├ítico inspir├│ Reputation (2017), con influencias del hip hop. Los ├ílbumes incluyeron los sencillos n├║mero uno del Billboard Hot 100 ┬½We Are Never Ever Getting Back Together┬╗, ┬½Shake It Off┬╗, ┬½Blank Space┬╗, ┬½Bad Blood┬╗ y ┬½Look What You Made Me Do┬╗.\r\n\r\nTras pasarse a Republic Records en 2018, Swift lanz├│ el ├ílbum de electropop Lover (2019) y compiti├│ con Big Machine por los m├ísteres, regrabando cuatro ├ílbumes como Taylor's Version.[nota 1]ÔÇï Explor├│ estilos de indie folk en los ├ílbumes hermanos de 2020 Folklore y Evermore, y experiment├│ con subg├®neros pop en Midnights (2022) y el ├ílbum doble The Tortured Poets Department (2024). A lo largo de la d├®cada de 2020, Swift alcanz├│ el n├║mero uno con canciones como ┬½Cardigan┬╗, ┬½Willow┬╗, ┬½All Too Well┬╗, ┬½Anti-Hero┬╗, ┬½Cruel Summer┬╗, ┬½Is It Over Now?┬╗ y ┬½Fortnight┬╗. En Estados Unidos, siete ├ílbumes de Swift han vendido un mill├│n de copias en su primera semana, un r├®cord. Ha realizado seis giras de conciertos, incluyendo The Eras Tour (2023-2024), la gira con mayor recaudaci├│n de todos los tiempos. Entre sus pel├¡culas se incluyen Miss Americana (2020), All Too Well: The Short Film (2021) y The Eras Tour (2023), la pel├¡cula de concierto m├ís taquillera.\r\n\r\nSwift ha recibido una amplia cobertura medi├ítica y cuenta con una base global de fanes. Publicaciones como Rolling Stone y Billboard la han incluido entre las artistas m├ís importantes de la historia; es la ├║nica persona del mundo art├¡stico nombrada persona del a├▒o por la revista Time (2023). Entre sus galardones se incluyen 14 premios Grammy (incluyendo un r├®cord de cuatro ├ílbum del a├▒o), un r├®cord de cinco premios Global Recording Artist of the Year y un premio Primetime Emmy. Swift es la artista m├ís galardonada de los premios American Music (40), los Billboard Music Awards (49) y los MTV Video Music Awards (30).",
+    "sitio_web": "",
+    "imagen": "artistas/Taylor_Swift.jpg",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:21:55.392Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 4,
+  "fields": {
+    "nombre": "Paulo Londra",
+    "pais": "Argentina",
+    "genero_principal": "Trap",
+    "biografia": "Paulo Ezequiel Londra (C├│rdoba, 12 de abril de 1998) es un cantante y compositor argentino. Londra surgi├│ de las competencias de freestyle de plaza que se celebraban de forma amateur, como El Quinto Escal├│n, donde adquiri├│ reconocimiento por su particular estilo de rapear. En 2017, lanz├│ su primer sencillo ┬½Relax┬╗ y adquiri├│ notabilidad por su canci├│n ┬½Condenado para el mill├│n┬╗. En 2018, se convirti├│ en el artista argentino con m├ís reproducciones en Spotify y YouTube gracias a sus sencillos ┬½Ad├ín y Eva┬╗, ┬½Nena maldici├│n┬╗ y ┬½Chica paranormal┬╗, y sus colaboraciones ┬½Cuando te bes├®┬╗ con Becky G y ┬½Te amo┬╗ con Piso 21.\r\n\r\nEn 2019, Londra lanz├│ los sencillos ┬½Forever Alone┬╗, ┬½Por eso vine┬╗, ┬½Tal vez┬╗ y ┬½Solo pienso en ti┬╗ (con De la Ghetto y Justin Quiles), que terminar├¡an de conformar su lista de sencillos para el estreno de su primer ├ílbum de estudio Homerun, que fue nominado como ├ílbum del a├▒o en los Premios Gardel y logr├│ alcanzar el primer puesto en la lista de ├ílbumes de Argentina. Sin embargo, en 2020, se ver├¡a involucrado en una disputa legal con Ovy on the Drums y Big Ligas, ya que lo vincularon hasta 2025 con la discogr├ífica Warner Music sin su consentimiento. Esto produjo que el cantante no pudiera lanzar m├║sica hasta la resoluci├│n de su contrato con el sello en 2022.[2]ÔÇï\r\n\r\nTras la conclusi├│n del juicio con su antigua disquera, Londra public├│ su segundo ├ílbum de estudio Back to the Game (2022), que fue precedido por el lanzamiento del sencillo ┬½Plan A┬╗ que marc├│ su regreso a la m├║sica y debut├│ en la cima del Argentina Hot 100. Su trabajo fue nominado nuevamente a los premios Carlos Gardel en la categor├¡a mejor ├ílbum urbano y colabor├│ con el productor Bizarrap en la canci├│n ┬½Paulo Londra: BZRP Music Sessions, Vol. 23┬╗, que se convirti├│ en su cuarto sencillo n├║mero uno en Argentina.",
+    "sitio_web": "",
+    "imagen": "artistas/paulo_londra.jfif",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:23:04.506Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 5,
+  "fields": {
+    "nombre": "Katy Perry",
+    "pais": "USA",
+    "genero_principal": "Pop",
+    "biografia": "Katheryn Elizabeth Hudson (Santa B├írbara, California, 25 de octubre de 1984), conocida art├¡sticamente como Katy Perry, es una cantante, actriz, modelo, productora discogr├ífica, bailarina, compositora, personalidad de televisi├│n y empresaria estadounidense. Es una de las artistas musicales con mayores ventas, m├ís de 143 millones de unidades vendidas en todo el mundo. Ha dejado una influencia en la m├║sica pop gracias a su estilo camp, por lo que Vogue y Rolling Stone la han apodado la ┬½Reina del Camp┬╗.[2]ÔÇï[3]ÔÇï Billboard la posicion├│ en el cuarto lugar de su lista de ┬½Los mejores artistas de canciones pop de todos los tiempos┬╗, en el puesto veinticinco de su ranking de ┬½Los artistas pop m├ís grandes del siglo XXI┬╗,[4]ÔÇï y en la quinta posici├│n de la lista ┬½Las cantantes m├ís populares y poderosas del siglo XXI┬╗.[5]ÔÇï\r\n\r\nA los 16 a├▒os, Perry lanz├│ un ├ílbum de m├║sica g├│spel titulado Katy Hudson (2001) bajo el sello Red Hill Records, que no tuvo ├®xito comercial. A los 17 a├▒os, se traslad├│ a Los ├üngeles para incursionar en la m├║sica secular, adoptando posteriormente el nombre art├¡stico de Katy Perry, basado en el apellido de soltera de su madre. Aunque grab├│ un ├ílbum con Columbia Records, fue desvinculada de la discogr├ífica antes de firmar con Capitol Records. Perry alcanz├│ la fama con One of the Boys (2008), un ├ílbum de pop rock que inclu├¡a su sencillo debut ┬½I kissed a girl┬╗ y el sencillo sucesor ┬½Hot n Cold┬╗, los cuales llegaron a las posiciones uno y tres, respectivamente, en el Billboard Hot 100 de Estados Unidos.\r\n\r\nSu ├ílbum de pop con influencias disco, Teenage Dream (2010), produjo cinco sencillos que alcanzaron el n├║mero uno en Estados Unidos: ┬½California Gurls┬╗, ┬½Teenage Dream┬╗, ┬½Firework┬╗, ┬½E.T.┬╗ y ┬½Last Friday Night (T.G.I.F.)┬╗. Este ├ílbum se convirti├│ en el ├║nico de una cantante femenina en lograrlo. La reedici├│n del disco, titulada Teenage Dream: The Complete Confection (2012), incluy├│ el sencillo n├║mero uno en Estados Unidos: ┬½Part of Me┬╗. Su ├ílbum Prism (2013), centrado en el empoderamiento, cont├│ con dos sencillos que tambi├®n alcanzaron el n├║mero uno en Estados Unidos, ┬½Roar┬╗ y ┬½Dark Horse┬╗. Los videos musicales de ambos lograron que Perry se convirtiera en la primera artista con varios videos que superaron los mil millones de vistas en Vevo y YouTube. Posteriormente, lanz├│ los ├ílbumes Witness (2017) y Smile (2020), y present├│ su residencia de conciertos en Las Vegas, titulada Play (2021-2023). En septiembre de 2024, lanz├│ su s├®ptimo ├ílbum de estudio, titulado 143.",
+    "sitio_web": "",
+    "imagen": "artistas/Katy_Perry_0_QF3l1AR.jpg",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:23:56.936Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 6,
+  "fields": {
+    "nombre": "Rod Stewart",
+    "pais": "Inglaterra",
+    "genero_principal": "Rock & Pop",
+    "biografia": "Roderick David Stewart (Londres, 10 de enero de 1945), conocido como Rod Stewart, es un m├║sico, compositor y productor brit├ínico de rock, conocido mundialmente por haber sido vocalista en las bandas The Jeff Beck Group y Faces, como tambi├®n por su exitosa y extensa carrera como solista. Con su distinguida voz rasposa inici├│ su carrera como m├║sico callejero para luego participar en The Dimensions y en el supergrupo The Steampacket durante los primeros a├▒os de la d├®cada de los sesenta. Sin embargo alcanz├│ el ├®xito despu├®s de ingresar a The Jeff Beck Group, donde solo particip├│ en sus dos primeros ├ílbumes, y luego en Faces hasta 1975 cuando la agrupaci├│n inglesa se separ├│.\r\n\r\nParalelo a su trabajo en Faces inici├│ su carrera en solitario con el disco An Old Raincoat Won't Ever Let You Down, que logr├│ m├ís atenci├│n en las listas musicales que los mismos ├ílbumes del grupo brit├ínico. Tras la separaci├│n de Faces se centr├│ en su carrera a tiempo completo, que continu├│ logrando ├®xito y ventas millonarias durante los a├▒os posteriores e incluso hasta el d├¡a de hoy. A lo largo de sus m├ís de cuarenta a├▒os de trayectoria como solista, ha incursionado en diversos g├®neros musicales como el soft rock, new wave, soul, blues rock, folk, rhythm and blues, white soul, pop rock y la m├║sica disco, entre otros.\r\n\r\nCon el pasar de los a├▒os ha sido considerado como uno de los grandes cantantes de la historia del rock. Tambi├®n ha ganado decenas de premios y condecoraciones por su contribuci├│n a la m├║sica, entre ellos un Premio Brit, un Premio Grammy y un reconocimiento como fundador de la ASCAP. Por otra parte, ha sido incluido dos veces en el Sal├│n de la Fama del Rock; la primera en 1994 como solista y la otra en 2012 como miembro de Faces, y a su vez ingres├│ en el Sal├│n de la Fama del Reino Unido en 2006.",
+    "sitio_web": "",
+    "imagen": "artistas/images_5.jfif",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:25:00.395Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 7,
+  "fields": {
+    "nombre": "Emilia Mernes",
+    "pais": "Argentina",
+    "genero_principal": "pop",
+    "biografia": "Mar├¡a Emilia Mernes[2]ÔÇï (Nogoy├í, Entre R├¡os; 29 de octubre de 1996), conocida simplemente como Emilia Mernes o Emilia, es una cantante, compositora, actriz y modelo argentina. Comenz├│ su carrera siendo la vocalista principal de la banda uruguaya de cumbia pop Rombai, junto a Fer V├ízquez,[3]ÔÇï a la cual renunci├│ en abril de 2018.[4]ÔÇï En marzo de 2019 firm├│ con el sello Sony Music Latin y la empresa de gesti├│n WK Entertainment representada por Walter Kolm.\r\n\r\nComo solista comenz├│ su carrera en 2019, con el lanzamiento de su primer sencillo, ┬½Recalienta┬╗.[5]ÔÇï Posteriormente, alcanz├│ mayor reconocimiento con su tema ┬½No soy yo┬╗, en colaboraci├│n con el rapero puertorrique├▒o Darell.[6]ÔÇï Su ├ílbum debut, ┬┐T├║ crees en m├¡?, fue lanzado el 31 de mayo de 2022. Fue certificado platino por la C├ímara Argentina de Productores de Fonogramas y Videogramas (CAPIF), y alcanz├│ el top 50 en Espa├▒a. El ├ílbum gener├│ los sencillos ┬½Como si no importara┬╗, ┬½R├ípido Lento┬╗, ┬½Cuatro veinte┬╗ e ┬½Intoxicao┬╗, que alcanzaron la lista de los diez primeros en el Argentina Hot 100 de Billboard. En 2023, lanz├│ su ├ílbum .MP3, influenciado por la d├®cada de 2000.\r\n\r\nLos reconocimientos de Emilia incluyen dos Premios Gardel, un Los 40 Music Awards, un Premio Buenos Aires Music Video Fest y dos Premios Quiero, as├¡ como nominaciones a los MTV Millennial Awards, Heat Latin Music Awards, Premios Juventud y los Premios Tu M├║sica Urbano, entre otros.",
+    "sitio_web": "",
+    "imagen": "artistas/emilia_mernes_XGXMdYO.jfif",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:26:11.657Z"
+  }
+},
+{
+  "model": "musica.artista",
+  "pk": 8,
+  "fields": {
+    "nombre": "Las Pelotas",
+    "pais": "Argentina",
+    "genero_principal": "rock nacional",
+    "biografia": "Las Pelotas es un grupo musical de Argentina fundado en 1988, en la ciudad de Hurlingham, Buenos Aires tras la muerte de Luca Prodan, l├¡der de Sumo, con una base formada por exintegrantes de ese grupo. En 1990 se establecen en C├│rdoba, pero poco despu├®s se mudan a Capital Federal donde actualmente residen.\r\nTras la muerte de Luca Prodan, cantante de Sumo, el 22 de diciembre de 1987, sus integrantes Ricardo Mollo, Diego Arnedo, Roberto Pettinatto, Alberto \"Superman\" Troglio y Germ├ín Daffunchio deciden reflexionar acerca del futuro de la banda. Daffunchio y Timmy MacKern (productor de Sumo y amigo de Luca) vuelven a las sierras cordobesas y el resto de la banda se queda ensayando en una sala del Palomar. El 5 de marzo de 1988, ya sin Luca Prodan en escena, Sumo se presenta en el Chateau Rock, con Daffunchio, Mollo, Pettinato, Arnedo y Troglio.\r\n\r\nTodos los integrantes vuelven a Buenos Aires, menos Germ├ín Daffunchio, quien se queda junto con Timmy en C├│rdoba.\r\n\r\nAl poco tiempo Pettinatto se va a Espa├▒a y forma una banda llamada Pachuco Cad├íver, Troglio decide no seguir ensayando en Palomar y Arnedo y Mollo forman Divididos. Para ese entonces Daffunchio llama a Troglio y este se va a C├│rdoba, donde comienzan a ensayar. Viajan nuevamente para Buenos Aires en busca de un cantante, y llaman a Alejandro Sokol, ex Sumo y amigo de Daffunchio, que ten├¡a una banda en la cual cantaba y se llamaba Sokol. Los tres van a C├│rdoba y comienzan a sacar temas y a darle forma a su nueva banda.\r\n\r\nPara completar la formaci├│n, llega a Willy Robles en el bajo, quien lleg├│ hasta las sierras a dedo. El 5 de noviembre de 1988, la banda da su primer show en vivo, en el Dallas Pub, en el barrio porte├▒o de Villa Luro (Juan B. Justo 8300).",
+    "sitio_web": "",
+    "imagen": "artistas/Las_Pelotas.jpg",
+    "video_youtube": "",
+    "created_at": "2025-08-07T20:51:26.767Z"
+  }
+},
+{
+  "model": "musica.notablog",
+  "pk": 1,
+  "fields": {
+    "titulo": "Antonio Machado tuvo su ingreso simb├│lico a la RAE",
+    "slug": null,
+    "contenido": "ÔÇ£Antonio Machado es el poeta m├ís querido y m├ís celebrado de los ├║ltimos 70 a├▒osÔÇØ, dijo el director de la Real Academia Espa├▒ola (RAE) Santiago Mu├▒oz Machado. Hoy se llev├│ a cabo un acto emotivo y simb├│lico donde se procedi├│ a la lectura del discurso de ingreso a la prestigiosa instituci├│n que Antonio Machado (1875-1939) nunca lleg├│ a leer. Fue Jos├® Sacrist├ín el encargado de leerlo y, luego, Joan Manuel Serrat, el responsable de entonar algunos de los versos del poeta sevillano inmortalizados por su voz y partituras. Tambi├®n se celebr├│ a Manuel Machado.\r\n\r\nÔÇ£┬┐Qu├® es lo actual en poes├¡a? Parece como si la l├¡rica se hubiera emancipado del tiempo. Los poemas modernos est├ín excesivamente lastrados de pensamiento conceptual, lo que quiere decir que las im├ígenes no navegan como anta├▒o en el fluir de la conciencia psicol├│gicaÔÇØ, planteaba Machado en la d├®cada del treinta. ┬┐Qu├® era lo actual por entonces? ┬┐Era Proust? ┬┐Era Joyce? En 1927 el escritor sevillano fue elegido acad├®mico de la RAE, pero en aquellos tiempos convulsos pol├¡tica y socialmente no fue posible que pronunciara su discurso ni que ocupara la silla que hab├¡a dejado vacante Miguel Echegaray (1848-1927), hermano del Premio Nobel de Literatura Jos├® Echegaray. ÔÇ£Probablemente no era pol├¡ticamente conveniente situarse al lado de la academia. Don Antonio Machado, en definitiva, no entr├│ en la academia porque no quiso, pero tuvo algunas razones para la demora que fueron, con seguridad, todas o algunas de las que he indicadoÔÇØ, expres├│ Mu├▒oz Machado.\r\n\r\nÔÇ£La evocaci├│n, la nostalgia, la fugacidad del instante, la condici├│n terminal e inexorable de la muerteÔÇØ, son los temas principales de la poes├¡a de Machado, adelant├│ Mu├▒oz Machado. ÔÇ£Hemos aprovechado el poder creativo de la memoria, tan del gusto de Antonio Machado, para so├▒ar esta tarde otra vez con su ingreso. Un escritor y acad├®mico dijo en este estado que su muerte en Colliure no puede ser modificada y su discurso de ingreso en esta Academia nunca se llegar├í a concluir. Es verdad. Pero nada nos impide so├▒ar con lo que pudo ser ni hay obst├ículo para la esperanza. Esperanza es otra palabra recurrente en su poes├¡aÔÇØ, continu├│ Mu├▒oz Machado.\r\n\r\nÔÇ£No soy humanista, ni fil├│logo, ni erudito. Ando muy flojo de lat├¡n porque me lo hizo aborrecer un mal maestro. Estudi├® el griego con amor por ansia de leer a Plat├│n pero tard├¡amente y tal vez por ello con escaso aprovechamiento. Pobres son mis letras, en suma, pues aunque he le├¡do mucho, mi memoria es d├®bil y he retenido muy poco. Si algo estudi├® con ah├¡nco, fue m├ís de filosof├¡a que de amena literatura. Y confesaros que, con excepci├│n de algunos poetas, las bellas letras nunca me apasionaronÔÇØ, comenzaba su discurso a la RAE el autor de Soledades. Galer├¡as. Otros poemas (1907) y Campos de Castilla (1912).\r\n\r\nÔÇ£Quiero deciros m├ís. Soy poco sensible a los primores de la forma, a la pulcritud y pulidez del lenguaje y a todo cuanto en literatura no se recomienda por su contenido. Lo bien dicho me seduce solo cuando dice algo interesante y la palabra escrita me fatiga cuando no me recuerda la espontaneidad de la palabra habladaÔÇØ, dec├¡a el discurso de Machado pronunciado por Sacrist├ín. En 1949 Machado public├│ en la Revista Hisp├ínica Moderna que dirig├¡a Federico de On├¡s el discurso donde exploraba su concepci├│n sobre la poes├¡a.\r\n\r\nPero Antonio Machado no fue el ├║nico homenajeado en la tarde de primavera en la RAE. Su hermano Manuel Machado tambi├®n tuvo un espacio para su reconocimiento: ÔÇ£En el ambiente de la tarde flota ese aroma de ausencia que dice al alma luminosa nunca y al coraz├│n espera. La historia de los ingresos en esta corporaci├│n de los hermanos Machado fue singular en ambos casos. Antonio fue elegido en 1927 y nunca lleg├│ a leer su discurso de ingreso. Manuel en 1938, diez a├▒os despu├®s, en plena guerra civil, y se incorpor├│ inmediatamente. Los dos fueron inequ├¡vocamente republicanos, pero la guerra los separ├│. Manuel estaba con su mujer en Burgos cuando se produjo el alzamiento de 1936 y no pudo regresar a Madrid. Aquellos d├¡as hizo unas declaraciones a un peri├│dico franc├®s que lo encarcelaran por sospechas de republicanismo. Fueron tres d├¡as de terror que condicionaron su existencia. Qued├│ a partir de entonces transformado en un franquista aparente y sin resquiciosÔÇØ, expres├│ Mu├▒oz Machado.\r\n\r\nÔÇ£Benditos sean los que hacen de la poes├¡a un arma cargada de futuroÔÇØ, comenz├│ Joan Manuel Serrat su interpretaci├│n. El primer tema que interpret├│ fue ÔÇ£RetratoÔÇØ, el poema que empieza con los siguientes versos: ÔÇ£Mi infancia son recuerdos de un patio de Sevilla,/y un huerto claro donde madura el limoneroÔÇØ. En un momento Serrat se olvid├│ la letra, pero ten├¡a una copia en el bolsillo de su traje que lo salv├│ de aquel descuido. Luego fue el turno de ÔÇ£Llanto de las virtudes y coplasÔÇØ y tambi├®n de la famosa ÔÇ£La saetaÔÇØ. El tema/la poes├¡a final fue la c├®lebre ÔÇ£Proverbios y cantaresÔÇØ, aquella composici├│n que contienen los versos: ÔÇ£Caminante, no hay camino/se hace camino al andarÔÇØ.\r\n\r\nTal como indica el protocolo del ingreso a la RAE, tras la pronunciaci├│n del discurso de un nuevo miembro, otro miembro responde con otro discurso aquel evento. En aquella ocasi├│n Azor├¡n deb├¡a responder a Antonio Machado. El dramaturgo y el acad├®mico Juan Mayorga fue el responsable de ponerle voz a Azor├¡n, quien propuso en su momento en persona el ingreso a la RAE de Antonio Machado. ÔÇ£Bienvenido, Antonio, a la que siempre fue tu casaÔÇØ, pronunci├│ Mayorga emulando a Azor├¡n.\r\n\r\nEspa├▒a est├í sumergida en un ├║nico tema de conversaci├│n que atrapa a la opini├│n p├║blica: el gran apag├│n que se vivi├│ en todo el territorio el lunes 28 de abril. Pero esta noticia, el ingreso de Antonio Machado y de su hermano Manuel a la RAE, trae nuevos aires a la opini├│n p├║blica, la idea de que se ha hecho justicia, de que ha demorado casi un siglo, pero que hay algo que el paso del tiempo ha logrado ubicar en su lugar. Desde el mi├®rcoles podr├í verse en la elegante sede de la RAE, en la calle Felipe IV, la muestra Los Machado. Retrato de familia, comisionada por Alfonso Guerra, que cuenta con escritos, fotos, cartas, y diversos objetos de los dos c├®lebres hermanos y de su universo cultural, tan sofisticado, tan emotivo. ÔÇ£Se pretende el rescate del ostracismo de Manuel y el rescate dram├ítico de AntonioÔÇØ, pronunci├│ Guerra.",
+    "imagen_destacada": "notas/joan_m_serrat_3ymkamG.jpg",
+    "tags": "",
+    "created_at": "2025-08-07T20:56:14.288Z"
+  }
+},
+{
+  "model": "musica.notablog",
+  "pk": 2,
+  "fields": {
+    "titulo": "Luck Ra cont├│ toda la verdad de su salida de La Voz Argentina 2025",
+    "slug": null,
+    "contenido": "Luck Ra es uno de los artistas m├ís reconocidos del g├®nero tropical en la actualidad con ├®xitos en la m├║sica mediante el cuarteto. Adem├ís, forma parte del jurado de La Voz Argentina 2025 junto con Soledad Pastorutti, Miranda y Lali Esp├│sito, pero en las ├║ltimas horas, sorprendi├│ al mundo de la televisi├│n tras contar la verdad de su salida del reality show de Telefe.\r\n\r\nEl cantante de hits como Hola Perdida y La Morocha fue elegido para ser uno de los jurados de La Voz Argentina 2025, programa que conduce Nicol├ís Occhiato y se estren├│ en Telefe el pasado lunes 23 de junio. Sin embargo, a poco tiempo de haber vuelto a la pantalla chica, el ciclo sufrir├í la salida de Luck Ra por unos d├¡as y el artista lo expuso a trav├®s de sus redes sociales.\r\n\r\nFiel a su estilo, interactu├│ con sus seguidores de manera descontracturada coment├índoles por qu├® se va a ausentar en los pr├│ximos d├¡as. \"Me voy de La Voz Argentina, gracias a todos pero tengo ganas de avisar que estoy enfermo esta semana\", solt├│ Luck Ra, quien llev├│ tranquilidad a sus seguidores en torno a su presencia en el programa de televisi├│n.\r\n\r\nPor el momento, se desconoce qui├®n ser├í su reemplazante los d├¡as que no podr├í grabar. Los fan├íticos del artista cordob├®s reaccionaron de manera efusiva en el posteo, pregunt├índole si ya ten├¡a un reemplazo, pidi├®ndole que no se vaya y destacando su buen presente en el mundo de la m├║sica. \r\n\r\n\"Este a├▒o La Voz tiene cambios. Nico la verdad es que est├í muy bien, lo s├® porque lo hemos hablado. Reemplazar a alguien como Marley que tiene una experiencia muy grande, que sabe mucho de m├║sica, es dif├¡cil\", sostuvo la artista en di├ílogo con LAM. \"Hoy con Ale de Miranda dec├¡amos que somos muy parejos en las devoluciones, en lo que pensamos. Esto tiene muchas peleas, te vas a sorprender. Yo soy re calentona, no s├® c├│mo va a quedar despu├®s en edici├│n. Pero con Luck Ra al principio nos agarr├íbamos fulero, y despu├®s con Lali, un par\", lanz├│ \"La Sole\".",
+    "imagen_destacada": "notas/luk_ra_se_fue.jpg",
+    "tags": "",
+    "created_at": "2025-08-15T00:02:04.046Z"
+  }
+},
+{
+  "model": "musica.concierto",
+  "pk": 1,
+  "fields": {
+    "nombre": "The Lifetimes Tour",
+    "detalle": "┬íKaty Perry regresa a la Argentina!\r\n\r\nLa super estrella pop llegar├í el 9 de septiembre de 2025 al Movistar Arena con \"The Lifetimes Tour\", presentando su nuevo disco y todos sus cl├ísicos. \r\n\r\n* Preventa exclusiva para clientes del Banco BBVA a partir del 19/11 a las 11am.\r\n* Venta General a partir del 21/11 a las 11am. Entradas a trav├®s de www.movistararena.com.ar",
+    "ubicacion": "Movistar Arena",
+    "fecha": "2025-11-19T00:00:00Z",
+    "imagen": "conciertos/Katy_Perry_en_concierto_d91SiHU.jpg",
+    "created_at": "2025-08-07T20:39:03.765Z"
+  }
+},
+{
+  "model": "musica.concierto",
+  "pk": 2,
+  "fields": {
+    "nombre": "Los ├üngeles Azules en Buenos Aires 2025",
+    "detalle": "Los ├üngeles Azules vuelven a la Argentina. Una de las bandas de cumbia m├ís grandes de todo el mundo anunci├│ su show en el pa├¡s, donde brindar├ín un recital que promete ser una gran celebraci├│n con m├║sica, baile y cultura popular. El grupo mexicano vendr├í al pa├¡s a repasar todos sus ├®xitos, como \"Nunca es Suficientre\", \"Como te voy a olvidar\" y \"Ella se olvid├│ de m├¡\", entre otros grandes temas, que desde 1980 conquista toda Am├®rica.\r\n\r\nEste show llega luego de un a├▒o repleto de hitos y ser├í la excusa ideal para celebrar, junto a artistas invitados el ├®xito rotundo de \"De Buenos Aires Para el Mundo\", un disco que cuenta con la participaci├│n de artistas argentinos. Este album, que es el vig├®simo octavo en la historia de la banda, y cont├│ con la colaboraci├│n de Lali Esp├│sito, Abel Pintos, Soledad, Abel Pintos, Vicentico, Palito Ortega, ├üngela Leiva y Juan Ingaramo.",
+    "ubicacion": "Parque de la Ciudad (CABA)",
+    "fecha": "2025-10-25T00:00:00Z",
+    "imagen": "conciertos/los_angeles_azules2.jpg",
+    "created_at": "2025-08-07T20:43:53.308Z"
+  }
+},
+{
+  "model": "musica.concierto",
+  "pk": 3,
+  "fields": {
+    "nombre": "\"One Last Time\" 2025",
+    "detalle": "Rod Stewart llega al Movistar Arena con su gira \"One Last Time\" 2025\r\n\r\nSir Rod Stewart, legendario cantautor y dos veces miembro del Rock & Roll Hall of Fame, llevar├í su esperada gira ÔÇ£One Last TimeÔÇØ a Sudam├®rica en 2025, con una ├║nica fecha en Argentina: el 22 de octubre.\r\n\r\nEsta gira, aclamada en Europa, Asia y Estados Unidos, ha sido un ├®xito de taquilla y est├í entre las 20 giras m├ís importantes del mundo en 2024. Cada show promete una noche inolvidable con ├®xitos como ÔÇ£Maggie May,ÔÇØ ÔÇ£Da Ya Think IÔÇÖm Sexy,ÔÇØ ÔÇ£Have I Told You Lately That I Love You,ÔÇØ y muchos m├ís, adem├ís de una producci├│n espectacular que reafirma a Stewart como uno de los mejores artistas en vivo de nuestra era.\r\n\r\nEn 2024, Rod lanz├│ su 33┬║ ├ílbum de estudio, Swing Fever, en colaboraci├│n con Jools Holland, recorri├│ Asia y Europa, y cerr├│ una residencia hist├│rica de 13 a├▒os en Las Vegas. En 2025, volver├í a The Colosseum at Caesars Palace con ÔÇ£The Encore ShowsÔÇØ.\r\n\r\nNo te pierdas la oportunidad de vivir un show ├║nico de esta leyenda de la m├║sica.\r\n\r\n22 de octubre\r\nMovistar Arena, Buenos Aires",
+    "ubicacion": "Movistar Arena",
+    "fecha": "2025-10-22T00:00:00Z",
+    "imagen": "conciertos/Rod_Stewart_en_concierto1.jpg",
+    "created_at": "2025-08-07T20:48:05.832Z"
+  }
+},
+{
+  "model": "musica.concierto",
+  "pk": 4,
+  "fields": {
+    "nombre": "Las Pelotas en Rosario",
+    "detalle": "Las Pelotas se presentar├ín el s├íbado 9 de agosto a las 19:30 h en Bioceres Arena (Rosario). Entradas disponibles a trav├®s de Entrada Play, 30% de descuento con Comunidad Indie Hoy.\r\n\r\nLa banda argentina celebra 36 a├▒os de historia con una gira nacional que los llevar├í por todo el pa├¡s. Desde sus comienzos tras la disoluci├│n de Sumo, la banda liderada por Germ├ín Daffunchio se consolid├│ como uno de los grandes nombres del rock argentino, marcando generaciones con su impronta ├║nica y canciones inolvidables.\r\n\r\nCon una carrera que incluye discos fundamentales y shows memorables, Las Pelotas contin├║a dejando huella con una propuesta que combina la fuerza del rock con letras profundas y emotivas. Mientras ultiman detalles de su nuevo ├ílbum, preparan un nuevo cap├¡tulo en su recorrido con una gira cargada de energ├¡a, historia y nuevas canciones.",
+    "ubicacion": "Bioceres Arena (Rosario)",
+    "fecha": "2025-08-09T00:00:00Z",
+    "imagen": "conciertos/las_pelotas_en_rosario.jpg",
+    "created_at": "2025-08-07T20:53:31.944Z"
+  }
+},
+{
+  "model": "musica.lanzamiento",
+  "pk": 1,
+  "fields": {
+    "titulo": "Taylor Swift ya lanz├│ el adelanto de su ├ílbum Midnigths",
+    "descripcion": "Despu├®s de mantener a sus fans a la expectativa, Taylor Swift por fin lanz├│ el tr├íiler de Midnights, su nuevo ├ílbum.\r\n\r\nEl esperado estreno de este adelanto ocurri├│ durante el partido de f├║tbol americano de los Cardinals de Arizona contra Saints de Nueva Orleans, los equipos de este deporte de contacto no se hab├¡an enfrentado en la cancha desde el 27 de octubre de 2019.\r\n\r\nTal y como lo hab├¡a anunciado, fue justo al final del tercer cuarto del Thursday Night Football cuando la famosa cantante dio a conocer todo lo que se aproxima con las canciones de su nuevo disco. En el marcador: 17-35 en favor de los Cardinals de Arizona.\r\n\r\nLa primera imagen del tr├íiler fue Taylor sentada mirando hacia la ventana para luego dar paso a un despertador que marc├│ las 12:00 en punto (en una clara referencia al t├¡tulo de su ├ílbum) y luego, a ella misma abriendo la ventana de su habitaci├│n.\r\n\r\nA continuaci├│n, se pudieron ver clips de no m├ís de un par de segundos de cada uno de los videos nuevos. El primero en estrenarse en su totalidad ser├í el de Anti-Hero. En menos de 10 minutos, la publicaci├│n de Instagram alcanz├│ m├ís de 200 mil ÔÇ£Me gustaÔÇØ en esta red social. En la descripci├│n del adelanto se pudo leer lo siguiente:\r\n\r\nÔÇ£Aqu├¡ est├í el tr├íiler de los videos que hice para Midnights. Gracias @amazonmusic, el primer video de de Anti-Hero saldr├í ma├▒ana a las 8 am en el tiempo del Este (de los Estados Unidos). Y Midnights estar├í aqu├¡ MUY PRONTOÔÇØ.",
+    "artista": 3,
+    "fecha_lanzamiento": "2025-08-13",
+    "imagen": "lanzamientos/taylor-swift-anuncio-un-nuevo.jpeg",
+    "created_at": "2025-08-13T12:59:48.376Z"
+  }
+},
+{
+  "model": "musica.lanzamiento",
+  "pk": 2,
+  "fields": {
+    "titulo": "Paulo Londra volvi├│ a sus or├¡genes en ┬½Versus┬╗, su nuevo EP",
+    "descripcion": "Despu├®s de estrenar Back To The Game hace ya dos a├▒os, Paulo Londra empez├│ un nuevo camino que lo trajo hasta hoy, 6 de marzo de 2024. Esta fecha ser├í recordada por ├®l, su equipo y sus fan├íticos como el regreso a los or├¡genes del artista cordob├®s. Aqu├¡ navega entre el trap y el g├®nero urbano con el estreno de su EP Versus.\r\n\r\nEl nombre, Versus, deja entender que Paulo Londra vivi├│ una especie de disputa, un enfrentamiento, pero la pregunta es: ┬┐con qui├®n? En el EP se pueden escuchar seis canciones donde parece que la respuesta no es tan clara. Algunos debates son contra ├®l mismo y otros, quiz├ís, contra alguien m├ís, pero lo m├ís importante es el tono en el que lo podemos escuchar. Canciones de trap y rap donde vuelve a las rimas crudas, tiraderas al estilo latino y ritmos que hac├¡a tiempo no escuch├íbamos en su haber.\r\n\r\nVersus se estren├│ de manera exclusiva a trav├®s del perfil oficial de Spotify del referente cordob├®s.",
+    "artista": 4,
+    "fecha_lanzamiento": "2025-08-14",
+    "imagen": "lanzamientos/paulo_londra_nvo_lp.jpg",
+    "created_at": "2025-08-13T14:25:32.649Z"
+  }
+},
+{
+  "model": "musica.lanzamiento",
+  "pk": 3,
+  "fields": {
+    "titulo": "Emilia Mernes lanz├│ ÔÇ£PerfectasÔÇØ",
+    "descripcion": "A lo largo de seis cap├¡tulos, Emilia Mernes fue abriendo poco a poco las puertas de su mundo. De afuera, todo parec├¡a brillante, glamoroso y so├▒ado, sin embargo, canci├│n a canci├│n, ella demostr├│ que no todo es color de rosa. Cansada de los mandatos sociales y las imposiciones de belleza y perfecci├│n que reciben las mujeres, la joven de Entre R├¡os alz├│ la voz para contar su verdad. Fue as├¡ como apunt├│ contra los estereotipos con los que lidian las mujeres y elabor├│ una respuesta a puro ritmo, pop y originalidad, la cual termin├│ de revelarse este jueves con el lanzamiento de su ├║ltima canci├│n ÔÇ£PerfectasÔÇØ.\r\n\r\nComo si faltaran pistas para entender por completo el mensaje que Emilia pon├¡a en el cielo -con temas como ÔÇ£BundaÔÇØ, ÔÇ£BlackoutÔÇØ, ÔÇ£PasarellaÔÇØ, ÔÇ£BeautifulÔÇØ y ÔÇ£ServidoraÔÇØ- la cantante lanz├│ una balada cargada de sentimientos. Lejos de la iron├¡a y la exageraci├│n de las ├║ltimas canciones, esta vez la artista se entreg├│ por completo y cant├│, en detalle de las situaciones que enfrentan miles de mujeres.\r\n\r\nÔÇ£Viendo chicas perfectas, s├® que en el fondo no quiero ser esto, todas sonriendo y ninguna contenta, cuidando la pose por si hay alguien cerca, solo me tengo que convencer. Quiero sentirme bienÔÇØ, expresa Emilia.",
+    "artista": 7,
+    "fecha_lanzamiento": "2025-08-11",
+    "imagen": "lanzamientos/emilia_lanza.jpg",
+    "created_at": "2025-08-13T14:29:04.467Z"
+  }
+},
+{
+  "model": "musica.comentario",
+  "pk": 1,
+  "fields": {
+    "nota": 1,
+    "autor": 1,
+    "contenido": "Aguante Nano!!!\r\nqu├® bien representado que estuvo Antonio Machado",
+    "created_at": "2025-08-14T18:48:06.472Z"
+  }
+},
+{
+  "model": "musica.comentario",
+  "pk": 2,
+  "fields": {
+    "nota": 2,
+    "autor": 1,
+    "contenido": "grande lik ra",
+    "created_at": "2025-08-15T00:44:13.196Z"
+  }
+}
+]

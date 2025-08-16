@@ -11,20 +11,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Seguridad
 SECRET_KEY = os.environ.get(
     "DJ_SECRET_KEY",
-    "django-insecure-f3+8eh3wlanx3(w7v3(d6&k-sy!7*=gscsk#ribol8c*hc7o(o"  # <-- solo para desarrollo
+    "django-insecure-dev-only-change-me"
 )
 
 # Debug por variable de entorno (True por defecto en local)
 DEBUG = os.environ.get("DJ_DEBUG", "True") == "True"
 
 # Hosts permitidos: local + (opcional) dominio en PA
-_allowed_env = os.environ.get("DJ_ALLOWED_HOST", "")
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"] + ([_allowed_env] if _allowed_env else [])
-# Si prefieres hardcodear, añade por ejemplo: "TU_USUARIO.pythonanywhere.com"
-# CSRF en producción (debe incluir https://)
-CSRF_TRUSTED_ORIGINS = [
-    "https://gaparodi.pythonanywhere.com",
-]
+PA_HOST = os.environ.get("DJ_ALLOWED_HOST", "gaparodi.pythonanywhere.com")
+
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "gaparodi.pythonanywhere.com"]
+CSRF_TRUSTED_ORIGINS = ["https://gaparodi.pythonanywhere.com"]
 
 # Apps
 INSTALLED_APPS = [
@@ -56,7 +53,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         # Si tienes una carpeta de proyecto "templates", se usa; si no, no pasa nada.
         "DIRS": [BASE_DIR / "templates"],
-        "APP_DIRS": True,  # Buscará también dentro de musica/templates/
+        "APP_DIRS": True,  # también busca en musica/templates/
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.request",
@@ -86,16 +83,26 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # i18n
-LANGUAGE_CODE = "es"   # español por defecto
-TIME_ZONE = "UTC"      # cambia si quieres, ej: "America/Argentina/Buenos_Aires"
+LANGUAGE_CODE = "es"
+TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
 # Static & media
+
 STATIC_URL = "/static/"
+# Si tienes una carpeta de estáticos a nivel de proyecto, descomenta la siguiente línea:
+# STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"   # para collectstatic en producción
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Opcional: tras login redirigir al inicio
+#LOGIN_REDIRECT_URL = "musica:inicio"
+#LOGOUT_REDIRECT_URL = "musica:inicio"
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

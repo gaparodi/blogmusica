@@ -2,22 +2,50 @@
 {% block title %}Iniciar sesión{% endblock %}
 
 {% block content %}
-<div class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-  <div class="col-md-4">
-    <h2 class="mb-4 text-center" style="color:#6C4F1F;">Iniciar sesión</h2>
-    <form method="post" style="background-color: #FFF8E1; padding: 20px; border-radius: 5px;">
-      {% csrf_token %}
-      {{ form.username.label_tag }}<br>
-      {{ form.username }}<br><br>
-      {{ form.password.label_tag }}<br>
-      {{ form.password }}<br><br>
-      <button type="submit" class="btn w-100" style="background-color: #FFC107; color: #fff; border: none;">
-        Entrar
-      </button>
-    </form>
-    <p class="mt-3 text-center" style="color:#333;">
-      ¿No tienes cuenta? <a href="{% url 'musica:registro' %}" style="color:#FFC107;">Regístrate aquí</a>
-    </p>
+<div class="container-fluid py-4">  {# ancho completo del viewport #}
+  <div class="row">
+    <div class="col-12">  {# 12/12 columnas: máximo ancho #}
+      <div class="card shadow-sm w-100" style="border-radius: 1rem;">
+        <div class="card-body p-4 p-md-5">
+          <h1 class="h4 mb-4">Iniciar sesión</h1>
+
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+          {% endif %}
+
+          <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label class="form-label" for="{{ form.username.id_for_label }}">Usuario</label>
+              <input type="text"
+                     name="{{ form.username.name }}"
+                     id="{{ form.username.id_for_label }}"
+                     class="form-control form-control-lg"
+                     value="{{ form.username.value|default_if_none:'' }}"
+                     autocomplete="username">
+              {% for error in form.username.errors %}
+                <div class="text-danger small">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label" for="{{ form.password.id_for_label }}">Contraseña</label>
+              <input type="password"
+                     name="{{ form.password.name }}"
+                     id="{{ form.password.id_for_label }}"
+                     class="form-control form-control-lg"
+                     autocomplete="current-password">
+              {% for error in form.password.errors %}
+                <div class="text-danger small">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

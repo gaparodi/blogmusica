@@ -56,6 +56,7 @@ TEMPLATES = [
         "APP_DIRS": True,  # también busca en musica/templates/
         "OPTIONS": {
             "context_processors": [
+                "django.template.context_processors.debug",      # ← añadido (conveniente)
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
@@ -83,13 +84,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # i18n
-LANGUAGE_CODE = "es"
-TIME_ZONE = "UTC"
+LANGUAGE_CODE = "es"  # podés usar "es-ar" si preferís
+TIME_ZONE = "UTC"     # si estás en AR: "America/Argentina/Buenos_Aires"
 USE_I18N = True
 USE_TZ = True
 
 # Static & media
-
 STATIC_URL = "/static/"
 # Si tienes una carpeta de estáticos a nivel de proyecto, descomenta la siguiente línea:
 # STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -100,9 +100,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Opcional: tras login redirigir al inicio
-#LOGIN_REDIRECT_URL = "musica:inicio"
-#LOGOUT_REDIRECT_URL = "musica:inicio"
-
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+# Auth
+# OJO: LOGIN_URL es una RUTA (path). Vamos a definir la URL /ingresar/ en urls.py con name='login'
+LOGIN_URL = "/ingresar/"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

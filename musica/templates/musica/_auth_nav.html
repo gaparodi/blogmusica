@@ -1,0 +1,22 @@
+<ul class="navbar-nav ms-auto">
+  {% if user.is_authenticated %}
+    <li class="nav-item">
+      <span class="nav-link disabled">Hola, {{ user.username }}</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'musica:logout' %}">Cerrar sesión</a>
+    </li>
+    {% if user.is_staff %}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/">Admin</a>
+      </li>
+    {% endif %}
+  {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'musica:login' %}?next={{ request.get_full_path }}">Ingresar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'musica:register' %}?next={{ request.get_full_path }}">Registrarse</a>
+    </li>
+  {% endif %}
+</ul>

@@ -1,0 +1,192 @@
+# AUDIT DJANGO PROJECT
+- Settings: blogmusica.settings
+- CWD: C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica
+
+## Template Dirs:
+  - C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\templates
+  - C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\entorno\Lib\site-packages\django\contrib\admin\templates
+  - C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\entorno\Lib\site-packages\django\contrib\auth\templates
+  - C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\musica\templates
+
+## Static Dirs:
+  - C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\entorno\Lib\site-packages\django\contrib\admin\static
+  - C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\musica\static
+
+Total templates: 68
+Total static files: 129
+
+## Posibles etiquetas de plantilla en español (corrígelas a las de Django):
+  - musica/templates/musica/lista_artistas.html
+      * patrón: {%\s*url\s+[\'"]musica:artista_detalle[\'"]\s*a\.pk\s*%}\s*"\s*class
+
+## Referencias a plantillas que NO existen:
+  - [include] admin/widgets/clearable_file_input.html → 'django/forms/widgets/attrs.html' (no encontrada en dirs de templates)
+  - [include] admin/widgets/date.html → 'django/forms/widgets/date.html' (no encontrada en dirs de templates)
+  - [include] admin/widgets/foreign_key_raw_id.html → 'django/forms/widgets/input.html' (no encontrada en dirs de templates)
+  - [include] admin/widgets/radio.html → 'django/forms/widgets/multiple_input.html' (no encontrada en dirs de templates)
+  - [include] admin/widgets/time.html → 'django/forms/widgets/time.html' (no encontrada en dirs de templates)
+  - [include] admin/widgets/url.html → 'django/forms/widgets/input.html' (no encontrada en dirs de templates)
+  - [include] auth/widgets/read_only_password_hash.html → 'django/forms/widgets/attrs.html' (no encontrada en dirs de templates)
+  - [extends] musica/nota_detalle.html → 'base.html' (no encontrada en dirs de templates)
+
+## Nombres de URL inválidos usados en plantillas ({% url %}):
+  - 'admin:app_list' no está definido. Usado en:
+      * admin/auth/user/change_password.html
+      * admin/change_form.html
+      * admin/change_list.html
+      * admin/delete_confirmation.html
+      * admin/delete_selected_confirmation.html
+      * admin/object_history.html
+  - 'admin:index' no está definido. Usado en:
+      * admin/500.html
+      * admin/app_index.html
+      * admin/auth/user/change_password.html
+      * admin/base.html
+      * admin/base_site.html
+      * admin/change_form.html
+      * admin/change_list.html
+      * admin/delete_confirmation.html
+      * admin/delete_selected_confirmation.html
+      * admin/invalid_setup.html
+      * admin/object_history.html
+      * registration/logged_out.html
+      * registration/password_change_done.html
+      * registration/password_change_form.html
+      * registration/password_reset_complete.html
+      * registration/password_reset_confirm.html
+      * registration/password_reset_done.html
+      * registration/password_reset_form.html
+  - 'admin:jsi18n' no está definido. Usado en:
+      * admin/change_form.html
+      * admin/change_list.html
+  - 'admin:logout' no está definido. Usado en:
+      * admin/base.html
+      * registration/password_change_done.html
+      * registration/password_change_form.html
+  - 'admin:password_change' no está definido. Usado en:
+      * admin/base.html
+  - 'admin_password_reset' no está definido. Usado en:
+      * admin/login.html
+  - 'django-admindocs-docroot' no está definido. Usado en:
+      * admin/base.html
+      * registration/password_change_done.html
+      * registration/password_change_form.html
+  - 'musica:artista_detalle' no está definido. Usado en:
+      * musica/concierto_detalle.html
+      * musica/lanzamiento_detalle.html
+      * musica/lista_artistas.html
+      * musica/lista_recomendaciones.html
+      * musica/recomendacion_detalle.html
+  - 'musica:concierto_detalle' no está definido. Usado en:
+      * musica/lista_conciertos.html
+  - 'musica:inicio' no está definido. Usado en:
+      * musica/base.html
+  - 'musica:lanzamiento_detalle' no está definido. Usado en:
+      * musica/lista_lanzamientos.html
+  - 'musica:lista_artistas' no está definido. Usado en:
+      * musica/base.html
+  - 'musica:lista_conciertos' no está definido. Usado en:
+      * musica/base.html
+      * musica/concierto_detalle.html
+  - 'musica:lista_lanzamientos' no está definido. Usado en:
+      * musica/base.html
+      * musica/lanzamiento_detalle.html
+  - 'musica:lista_recomendaciones' no está definido. Usado en:
+      * musica/recomendacion_detalle.html
+  - 'musica:login' no está definido. Usado en:
+      * musica/_auth_nav.html
+      * musica/base.html
+      * musica/login.html
+      * musica/nota_detalle.html
+      * musica/register.html
+      * musica/registrarse.html
+      * musica/registro.html
+  - 'musica:logout' no está definido. Usado en:
+      * musica/_auth_nav.html
+      * musica/base.html
+  - 'musica:nota_comentar' no está definido. Usado en:
+      * musica/nota_detalle.html
+  - 'musica:nota_detail' no está definido. Usado en:
+      * musica/inicio.html
+  - 'musica:quienes_somos' no está definido. Usado en:
+      * musica/base.html
+  - 'musica:recomendacion_detalle' no está definido. Usado en:
+      * musica/lista_recomendaciones.html
+  - 'musica:register' no está definido. Usado en:
+      * musica/_auth_nav.html
+      * musica/base.html
+      * musica/login.html
+      * musica/nota_detalle.html
+      * musica/register.html
+      * musica/registrarse.html
+      * musica/registro.html
+  - 'password_reset_confirm' no está definido. Usado en:
+      * registration/password_reset_email.html
+
+## Nombres de URL definidos (muestra):
+  (no se detectaron; ¿urls mal cargadas o settings incorrectos?)
+
+## Duplicados por contenido (hash coincidente):
+  - Grupo duplicado:
+      [TEMPLATE] C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\musica\templates\musica\register.html
+      [TEMPLATE] C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\musica\templates\musica\registrarse.html
+  - Grupo duplicado:
+      [STATIC] C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\entorno\Lib\site-packages\django\contrib\admin\static\admin\css\vendor\select2\LICENSE-SELECT2.md
+      [STATIC] C:\Users\Gustavo\Desktop\mi_primer_web\blog_musica\entorno\Lib\site-packages\django\contrib\admin\static\admin\js\vendor\select2\LICENSE.md
+
+## Múltiples base.html detectados:
+  - admin/base.html
+  - musica/base.html
+
+## Plantillas potencialmente huérfanas (no referenciadas por extends/include ni por render()):
+  - admin/404.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/404.html
+  - admin/500.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/500.html
+  - admin/actions.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/actions.html
+  - admin/app_index.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/app_index.html
+  - admin/auth/user/add_form.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/auth/user/add_form.html
+  - admin/auth/user/change_password.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+  - admin/change_form_object_tools.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/change_form_object_tools.html
+  - admin/change_list.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/change_list.html
+  - admin/change_list_object_tools.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/change_list_object_tools.html
+  - admin/change_list_results.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/change_list_results.html
+  - admin/date_hierarchy.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/date_hierarchy.html
+  - admin/delete_confirmation.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+  - admin/delete_selected_confirmation.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+  - admin/edit_inline/stacked.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/edit_inline/stacked.html
+  - admin/edit_inline/tabular.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/edit_inline/tabular.html
+  - admin/filter.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/filter.html
+  - admin/invalid_setup.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/invalid_setup.html
+  - admin/login.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/login.html
+  - admin/object_history.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/object_history.html
+  - admin/pagination.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/pagination.html
+  - admin/popup_response.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/popup_response.html
+  - admin/prepopulated_fields_js.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/prepopulated_fields_js.html
+  - admin/search_form.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/search_form.html
+  - admin/submit_line.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/submit_line.html
+  - admin/widgets/clearable_file_input.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/clearable_file_input.html
+  - admin/widgets/date.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/date.html
+  - admin/widgets/many_to_many_raw_id.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/many_to_many_raw_id.html
+  - admin/widgets/radio.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/radio.html
+  - admin/widgets/related_widget_wrapper.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+  - admin/widgets/split_datetime.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/split_datetime.html
+  - admin/widgets/time.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/time.html
+  - admin/widgets/url.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/admin/widgets/url.html
+  - auth/widgets/read_only_password_hash.html  →  entorno/Lib/site-packages/django/contrib/auth/templates/auth/widgets/read_only_password_hash.html
+  - musica/_auth_nav.html  →  musica/templates/musica/_auth_nav.html
+  - musica/register.html  →  musica/templates/musica/register.html
+  - musica/registrarse.html  →  musica/templates/musica/registrarse.html
+  - registration/logged_out.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/logged_out.html
+  - registration/password_change_done.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_change_done.html
+  - registration/password_change_form.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_change_form.html
+  - registration/password_reset_complete.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html
+  - registration/password_reset_confirm.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_reset_confirm.html
+  - registration/password_reset_done.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_reset_done.html
+  - registration/password_reset_email.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_reset_email.html
+  - registration/password_reset_form.html  →  entorno/Lib/site-packages/django/contrib/admin/templates/registration/password_reset_form.html
+
+## Sugerencias típicas de corrección:
+- * Cambia etiquetas en español por las estándar: 'extiende'→'extends', 'si'→'if', 'contenido del bloque'→'block content', 'finbloque'→'endblock', 'carga estática'→'load static'.
+- * Asegura que los {% url %} usen nombres existentes. Ej.: {% url 'musica:artista_detalle' a.pk %} requiere que exista path('artistas/<int:pk>/', views.artista_detalle, name='artista_detalle') dentro de urls.py y que el include tenga namespace='musica'.
+- * Si tienes varias base.html, unifica a una sola en 'musica/base.html' y usa {% extends 'musica/base.html' %}.
+- * Si una plantilla aparece en 'Referencias a plantillas que NO existen', crea ese archivo o corrige la ruta en extends/include.
+- * Revisa plantillas 'huérfanas': si no se usan, bórralas o refactorízalas.

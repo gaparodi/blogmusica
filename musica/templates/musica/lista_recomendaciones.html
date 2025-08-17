@@ -13,7 +13,7 @@
               <p class="card-text">{{ r.descripcion|truncatechars:150 }}</p>
               <p class="mb-1"><small class="text-muted">Fecha: {{ r.fecha|date:"d/m/Y" }}</small></p>
               <p class="mb-2"><small class="text-muted">Artista: 
-                <a href="{% url 'musica:artista_detalle' r.artista.pk %}">
+                <a href="{% url 'musica:recomendacion_detalle' r.pk %}">
                   {{ r.artista.nombre }}
                 </a>
               </small></p>

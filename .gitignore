@@ -1,17 +1,16 @@
-# Python
-__pycache__/
-*.py[cod]
-*.log
-
-# Entornos
-venv/
-env/
+# venv y cache
 entorno/
+venv/
+__pycache__/
+*.pyc
 
-# Django
-staticfiles/
-media/
-db.sqlite3
-
-# VSCode
+# IDE
 .vscode/
+.idea/
+
+# archivos de despliegue
+db.sqlite3
+media/
+archivos estáticos/
+staticfiles/
+.env

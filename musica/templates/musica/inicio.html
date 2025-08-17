@@ -1,110 +1,107 @@
-{% extends 'musica/base.html' %}
-{% load static %}
-
-{% block title %}Inicio{% endblock %}
+{% extends "musica/base.html" %}
+{% block title %}Inicio · Blog Música{% endblock %}
 
 {% block content %}
 
-<!-- Buscador -->
-<div class="container mb-4 mt-5">
-  <form method="GET" action="{% url 'musica:inicio' %}" class="d-flex justify-content-center">
-    <input 
-      type="text" 
-      name="q" 
-      class="form-control me-2 w-50" 
-      placeholder="Buscar artistas, notas, conciertos..." 
-      value="{{ query|default:'' }}"
-      style="border-radius: 5px; border: 1px solid #6C4F1F; padding: 8px;">
-    <button type="submit" class="btn" style="background-color: #FFC107; color: #fff; border: none; transition: 0.3s;">
-      Buscar
-    </button>
-  </form>
-</div>
-
-<script>
-  // Hover para el botón de búsqueda
-  const buscarBtn = document.querySelector('form button');
-  if (buscarBtn) {
-    buscarBtn.addEventListener('mouseover', () => buscarBtn.style.backgroundColor = '#FF9800');
-    buscarBtn.addEventListener('mouseout', () => buscarBtn.style.backgroundColor = '#FFC107');
-  }
-</script>
-
-<!-- Contenido principal -->
-<div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
-  {% if items %}
-    {% for item in items %}
-      {% with obj=item.obj %}
-      <div class="col">
-        <div class="card h-100 bg-secondary text-light border-0">
-
-          {# URL de detalle según el tipo (una sola vez) #}
-          {% if item.tipo == 'nota' %}
-            {% url 'musica:nota_detalle' obj.pk as detail_url %}
-          {% elif item.tipo == 'concierto' %}
-            {% url 'musica:concierto_detalle' obj.pk as detail_url %}
-          {% elif item.tipo == 'lanzamiento' %}
-            {% url 'musica:lanzamiento_detalle' obj.pk as detail_url %}
-          {% else %}
-            {% url 'musica:recomendacion_detalle' obj.pk as detail_url %}
-          {% endif %}
-
-          {# Imagen con fallback a un placeholder estático #}
-          <div class="ratio ratio-16x9">
-            {% if item.tipo == 'nota' and obj.imagen_destacada %}
-              <a href="{{ detail_url }}">
-                <img src="{{ obj.imagen_destacada.url }}" class="w-100 h-100" style="object-fit:cover;" alt="{% firstof obj.titulo obj.nombre %}">
-              </a>
-            {% elif item.tipo == 'concierto' and obj.imagen %}
-              <a href="{{ detail_url }}">
-                <img src="{{ obj.imagen.url }}" class="w-100 h-100" style="object-fit:cover;" alt="{% firstof obj.titulo obj.nombre %}">
-              </a>
-            {% elif item.tipo == 'lanzamiento' and obj.artista and obj.artista.imagen %}
-              <a href="{{ detail_url }}">
-                <img src="{{ obj.artista.imagen.url }}" class="w-100 h-100" style="object-fit:cover;" alt="{{ obj.artista.nombre }}">
-              </a>
-            {% else %}
-              <a href="{{ detail_url }}">
-                <img src="{% static 'musica/portada.png' %}" class="w-100 h-100" style="object-fit:cover;" alt="Sin imagen disponible">
-              </a>
-            {% endif %}
-          </div>
-
-          <!-- Cuerpo -->
-          <div class="card-body">
-            <h5 class="card-title mb-2">
-              <a class="link-light text-decoration-none" href="{{ detail_url }}">
-                {% firstof obj.titulo obj.nombre %}
-              </a>
-            </h5>
-            <p class="card-text">
-              {% if item.tipo == 'nota' %}
-                {{ obj.contenido|truncatechars:100 }}
-              {% elif item.tipo == 'concierto' %}
-                {{ obj.detalle|truncatechars:100 }}
-              {% else %}
-                {{ obj.descripcion|truncatechars:100 }}
-              {% endif %}
-            </p>
-            <a href="{{ detail_url }}" class="btn btn-sm btn-primary">Ver más</a>
-          </div>
-
-          <div class="card-footer text-muted small">
-            {{ item.orden|date:"d/m/Y H:i" }}
-          </div>
-        </div>
-      </div>
-      {% endwith %}
-    {% endfor %}
-  {% else %}
-    <div class="col-12">
-      {% if query %}
-        <p>No se encontraron resultados para "{{ query }}".</p>
-      {% else %}
-        <p>No hay contenido para mostrar.</p>
-      {% endif %}
-    </div>
+  {% if query %}
+    <h5 class="mb-3">Resultados para “{{ query }}”</h5>
   {% endif %}
-</div>
+
+  {% if items %}
+    <div class="row g-3">
+      {% for it in items %}
+        {% with detail_url=it.url|default:'#' %}
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="{{ detail_url }}" class="text-decoration-none text-reset">
+            <div class="card h-100 shadow-sm">
+              <div class="ratio ratio-16x9">
+                {# ALT seguro a partir de varios campos #}
+                {% firstof it.titulo it.obj.titulo it.obj.nombre it.obj.name 'Contenido' as alt_text %}
+
+                {% if it.image_url %}
+                  <img src="{{ it.image_url }}" class="card-img-top" alt="{{ alt_text }}">
+                {% elif it.obj %}
+                  {% if it.obj.imagen %}
+                    <img src="{{ it.obj.imagen.url }}" class="card-img-top" alt="{{ alt_text }}">
+                  {% elif it.obj.image %}
+                    <img src="{{ it.obj.image.url }}" class="card-img-top" alt="{{ alt_text }}">
+                  {% elif it.obj.foto %}
+                    <img src="{{ it.obj.foto.url }}" class="card-img-top" alt="{{ alt_text }}">
+                  {% elif it.obj.portada %}
+                    <img src="{{ it.obj.portada.url }}" class="card-img-top" alt="{{ alt_text }}">
+                  {% else %}
+                    <div class="w-100 h-100 bg-light d-flex align-items-center justify-content-center">
+                      <span class="text-muted small">Sin imagen</span>
+                    </div>
+                  {% endif %}
+                {% else %}
+                  <div class="w-100 h-100 bg-light d-flex align-items-center justify-content-center">
+                    <span class="text-muted small">Sin imagen</span>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                  {% if it.tipo %}
+                    <span class="badge text-bg-secondary text-capitalize">{{ it.tipo }}</span>
+                  {% endif %}
+                  {% firstof it.orden it.obj.orden it.obj.created_at it.obj.creado_at it.obj.fecha it.obj.fecha_publicacion it.obj.fecha_evento as dt %}
+                  {% if dt %}<small class="text-muted">{{ dt|date:"d/m/Y H:i" }}</small>{% endif %}
+                </div>
+
+                {% firstof it.titulo it.obj.titulo it.obj.nombre it.obj.name '(Sin título)' as t %}
+                <h5 class="card-title">{{ t }}</h5>
+
+                {# Mostrar preview para todos los tipos; ofrecemos muchos alias #}
+                {% firstof it.preview it.obj.preview it.obj.descripcion it.obj.detalle it.obj.texto it.obj.contenido it.obj.resumen it.obj.bajada it.obj.subtitulo as raw_preview %}
+                {% if raw_preview %}
+                  <p class="card-text text-muted mb-0">{{ raw_preview|striptags|truncatechars:160 }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-secondary">No hay publicaciones.</div>
+  {% endif %}
+
+  <!-- Últimas notas (al pie) -->
+  <section class="mt-5">
+    <h5 class="mb-3">Últimas notas</h5>
+    {% if ultimas_notas %}
+      <div class="list-group">
+        {% for n in ultimas_notas %}
+          {% with href=n.get_absolute_url|default:'#' %}
+          <a class="list-group-item list-group-item-action" href="{{ href }}">
+            <div class="d-flex align-items-center">
+              {% if n.imagen %}
+                <img src="{{ n.imagen.url }}" alt="" class="rounded me-3" style="width:80px;height:60px;object-fit:cover;">
+              {% elif n.image %}
+                <img src="{{ n.image.url }}" alt="" class="rounded me-3" style="width:80px;height:60px;object-fit:cover;">
+              {% elif n.foto %}
+                <img src="{{ n.foto.url }}" alt="" class="rounded me-3" style="width:80px;height:60px;object-fit:cover;">
+              {% elif n.portada %}
+                <img src="{{ n.portada.url }}" alt="" class="rounded me-3" style="width:80px;height:60px;object-fit:cover;">
+              {% endif %}
+
+              <div>
+                {% firstof n.titulo n.nombre n.name '(Sin título)' as nt %}
+                <div class="fw-semibold">{{ nt }}</div>
+                {% firstof n.created_at n.creado_at n.fecha n.fecha_publicacion as ndt %}
+                <small class="text-muted">{% if ndt %}{{ ndt|date:"d/m/Y H:i" }}{% else %}ID {{ n.id }}{% endif %}</small>
+              </div>
+            </div>
+          </a>
+          {% endwith %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="text-muted">No hay publicaciones.</div>
+    {% endif %}
+  </section>
 
 {% endblock %}

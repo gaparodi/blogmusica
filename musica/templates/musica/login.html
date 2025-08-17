@@ -1,51 +1,53 @@
-{% extends 'musica/base.html' %}
-{% block title %}Iniciar sesión{% endblock %}
+{% extends "musica/base.html" %}
+{% load static %}
+
+{% block title %}Ingresar • Blog Música{% endblock %}
 
 {% block content %}
-<div class="container-fluid py-4">  {# ancho completo del viewport #}
-  <div class="row">
-    <div class="col-12">  {# 12/12 columnas: máximo ancho #}
-      <div class="card shadow-sm w-100" style="border-radius: 1rem;">
-        <div class="card-body p-4 p-md-5">
-          <h1 class="h4 mb-4">Iniciar sesión</h1>
+<div class="container py-4" style="max-width: 480px;">
+  <h1 class="h4 mb-3">Ingresar</h1>
 
-          {% if form.non_field_errors %}
-            <div class="alert alert-danger">{{ form.non_field_errors }}</div>
-          {% endif %}
+  <form method="post" action="{% url 'musica:login' %}">
+    {% csrf_token %}
 
-          <form method="post" novalidate>
-            {% csrf_token %}
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+    {% endif %}
 
-            <div class="mb-3">
-              <label class="form-label" for="{{ form.username.id_for_label }}">Usuario</label>
-              <input type="text"
-                     name="{{ form.username.name }}"
-                     id="{{ form.username.id_for_label }}"
-                     class="form-control form-control-lg"
-                     value="{{ form.username.value|default_if_none:'' }}"
-                     autocomplete="username">
-              {% for error in form.username.errors %}
-                <div class="text-danger small">{{ error }}</div>
-              {% endfor %}
-            </div>
-
-            <div class="mb-4">
-              <label class="form-label" for="{{ form.password.id_for_label }}">Contraseña</label>
-              <input type="password"
-                     name="{{ form.password.name }}"
-                     id="{{ form.password.id_for_label }}"
-                     class="form-control form-control-lg"
-                     autocomplete="current-password">
-              {% for error in form.password.errors %}
-                <div class="text-danger small">{{ error }}</div>
-              {% endfor %}
-            </div>
-
-            <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
-          </form>
-        </div>
-      </div>
+    <div class="mb-3">
+      <label for="{{ form.username.id_for_label }}" class="form-label">Usuario</label>
+      {{ form.username }}
+      {% for e in form.username.errors %}
+        <div class="invalid-feedback d-block">{{ e }}</div>
+      {% endfor %}
     </div>
-  </div>
+
+    <div class="mb-3">
+      <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña</label>
+      {{ form.password }}
+      {% for e in form.password.errors %}
+        <div class="invalid-feedback d-block">{{ e }}</div>
+      {% endfor %}
+    </div>
+
+    {% if request.GET.next %}
+      <input type="hidden" name="next" value="{{ request.GET.next }}">
+    {% elif next %}
+      <input type="hidden" name="next" value="{{ next }}">
+    {% endif %}
+
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+    </div>
+  </form>
+
+  <hr class="my-4">
+
+  <p class="mb-0">
+    ¿No tenés cuenta?
+    <a href="{% url 'musica:register' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}">
+      Registrate
+    </a>
+  </p>
 </div>
 {% endblock %}

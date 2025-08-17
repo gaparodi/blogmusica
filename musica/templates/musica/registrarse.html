@@ -17,33 +17,25 @@
     <div class="mb-3">
       <label for="{{ form.username.id_for_label }}" class="form-label">Usuario</label>
       {{ form.username }}
-      {% for e in form.username.errors %}
-        <div class="invalid-feedback d-block">{{ e }}</div>
-      {% endfor %}
+      {% for e in form.username.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
     </div>
 
     <div class="mb-3">
       <label for="{{ form.email.id_for_label }}" class="form-label">Email (opcional)</label>
       {{ form.email }}
-      {% for e in form.email.errors %}
-        <div class="invalid-feedback d-block">{{ e }}</div>
-      {% endfor %}
+      {% for e in form.email.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
     </div>
 
     <div class="mb-3">
       <label for="{{ form.password1.id_for_label }}" class="form-label">Contraseña</label>
       {{ form.password1 }}
-      {% for e in form.password1.errors %}
-        <div class="invalid-feedback d-block">{{ e }}</div>
-      {% endfor %}
+      {% for e in form.password1.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
     </div>
 
     <div class="mb-3">
       <label for="{{ form.password2.id_for_label }}" class="form-label">Repetir contraseña</label>
       {{ form.password2 }}
-      {% for e in form.password2.errors %}
-        <div class="invalid-feedback d-block">{{ e }}</div>
-      {% endfor %}
+      {% for e in form.password2.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
     </div>
 
     {% if request.GET.next %}

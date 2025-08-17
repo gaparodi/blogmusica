@@ -6,3 +6,33 @@ body {
     object-fit: cover;
     height: 200px;
 }
+
+/* ===== Comentarios: fondo muy claro ===== */
+:root{
+  --comment-bg: #ffffff;      /* blanco */
+  --comment-bg-alt: #fafafa;  /* gris MUY suave para alternar */
+  --comment-border: rgba(0,0,0,.06);
+}
+
+#comentarios .list-group-item,
+#comentarios .card {
+  background-color: var(--comment-bg) !important;
+  border-color: var(--comment-border);
+}
+
+#comentarios .list-group-item:nth-child(odd) {
+  background-color: var(--comment-bg-alt) !important;
+}
+
+#comentarios .comment-meta {
+  color: #6c757d; /* gris bootstrap */
+}
+
+#comentarios .comment-body {
+  color: #333;
+}
+
+#comentarios .comentario-item {
+  border-radius: .5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,.02);
+}

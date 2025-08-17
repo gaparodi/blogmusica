@@ -1,0 +1,58 @@
+{% extends 'musica/base.html' %}
+{% block title %}Ingresos{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h1 class="mb-4">Ingresos</h1>
+
+  {% if items %}
+    <div class="list-group">
+      {% for it in items %}
+        {% with o=it.obj tipo=it.tipo %}
+          {# Armar URL de detalle según tipo #}
+          {% if tipo == 'nota' %}
+            {% url 'musica:nota_detalle' o.pk as detail_url %}
+            {% setlabel = "Nota" %}
+          {% elif tipo == 'concierto' %}
+            {% url 'musica:concierto_detalle' o.pk as detail_url %}
+            {% setlabel = "Concierto" %}
+          {% elif tipo == 'lanzamiento' %}
+            {% url 'musica:lanzamiento_detalle' o.pk as detail_url %}
+            {% setlabel = "Lanzamiento" %}
+          {% elif tipo == 'recomendacion' %}
+            {% url 'musica:recomendacion_detalle' o.pk as detail_url %}
+            {% setlabel = "Recomendación" %}
+          {% else %}
+            {% setlabel = "Post" %}
+            {% set detail_url = "#" %}
+          {% endif %}
+
+          <a href="{{ detail_url }}" class="list-group-item list-group-item-action py-3">
+            <div class="d-flex">
+              <div class="me-3 flex-shrink-0" style="width:140px">
+                {% if it.img %}
+                  <img src="{{ it.img.url }}" alt="{{ it.titulo }}" class="img-fluid rounded">
+                {% else %}
+                  <div class="bg-secondary rounded" style="width:140px; height:90px;"></div>
+                {% endif %}
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-baseline">
+                  <h5 class="mb-1">{{ it.titulo }}</h5>
+                  <small class="text-muted">{{ it.orden|date:"d/m/Y H:i" }}</small>
+                </div>
+                {% if it.preview %}
+                  <p class="mb-2 text-muted">{{ it.preview }}</p>
+                {% endif %}
+                <span class="badge bg-primary">{{ setlabel }}</span>
+              </div>
+            </div>
+          </a>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-muted">No hay ingresos para mostrar.</p>
+  {% endif %}
+</div>
+{% endblock %}
